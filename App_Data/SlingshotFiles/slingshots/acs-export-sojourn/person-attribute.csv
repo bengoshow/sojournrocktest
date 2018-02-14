@@ -1,0 +1,23 @@
+Key,Name,FieldType,Category
+IndWorkTitle,Work Title,Rock.Field.Types.TextFieldType,Imported Attributes
+IndAllergies,Allergies,Rock.Field.Types.TextFieldType,Imported Attributes
+IndSchoolName,School Name,Rock.Field.Types.TextFieldType,Imported Attributes
+IndOpenField4,Open Field 4,Rock.Field.Types.TextFieldType,Imported Attributes
+IndCampus,Campus,Rock.Field.Types.TextFieldType,Imported Attributes
+IndLeadership,Leadership,Rock.Field.Types.TextFieldType,Imported Attributes
+IndStaff,Staff,Rock.Field.Types.TextFieldType,Imported Attributes
+IndOpenCategory4,Open Category 4,Rock.Field.Types.TextFieldType,Imported Attributes
+IndMilitary,Military,Rock.Field.Types.TextFieldType,Imported Attributes
+IndAgeBracket,Age Bracket,Rock.Field.Types.TextFieldType,Imported Attributes
+IndSpiritualMaturity,Spiritual Maturity,Rock.Field.Types.TextFieldType,Imported Attributes
+IndBaptized,Baptized,Rock.Field.Types.TextFieldType,Imported Attributes
+IndHowtheyheard,Howtheyheard,Rock.Field.Types.TextFieldType,Imported Attributes
+IndLimitAccessUser,Limit Access User,Rock.Field.Types.TextFieldType,Imported Attributes
+IndFamPosition,Fam Position,Rock.Field.Types.TextFieldType,Imported Attributes
+IndReasonLeft,Reason Left,Rock.Field.Types.TextFieldType,Imported Attributes
+IndAnniversary,Anniversary,Rock.Field.Types.DateTimeFieldType,Imported Attributes
+IndSalvation,Salvation,Rock.Field.Types.DateTimeFieldType,Imported Attributes
+IndChildWorkStartDate,Child Work Start Date,Rock.Field.Types.DateTimeFieldType,Imported Attributes
+IndChildWorkStopDate,Child Work Stop Date,Rock.Field.Types.DateTimeFieldType,Imported Attributes
+IndOpenDate5,Open Date 5,Rock.Field.Types.DateTimeFieldType,Imported Attributes
+IndMembershipStopDate,Membership Stop Date,Rock.Field.Types.DateTimeFieldType,Imported Attributes
