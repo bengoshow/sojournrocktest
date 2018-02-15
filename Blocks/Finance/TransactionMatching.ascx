@@ -94,6 +94,12 @@
                                     </asp:Panel>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <Rock:DynamicPlaceHolder ID="phPaymentAttributeEdits" runat="server" />
+                                </div>
+                            </div>
                             
                             <Rock:NotificationBox ID="nbSaveError" runat="server" NotificationBoxType="Danger" Dismissable="true" Text="Warning. Unable to save..." />
                             <Rock:RockControlWrapper ID="rcwAccountSplit" runat="server" Label="Account Split" Help="Enter the amount that should be allocated to each account. The total must match the amount shown on the transaction image">
@@ -106,14 +112,14 @@
                                 </div>
                                 <asp:Panel ID="pnlAddOptionalAccount" runat="server" CssClass="row" Visible="false">
                                     <div class="col-md-8">
-                                        <Rock:RockDropDownList ID="ddlAddAccount" runat="server" CssClass="js-add-account" onblur="javascript:return handleAddAccountBoxEvent(this, event);" onkeydown="javascript:return handleAddAccountBoxEvent(this, event);" />
+                                        <Rock:RockDropDownList ID="ddlAddAccount" runat="server" CssClass="js-add-account" EnhanceForLongLists="true" />
                                     </div>
                                     <div class="col-md-4" style="margin-left:-10px">
                                         <Rock:CurrencyBox ID="cbOptionalAccountAmount" runat="server" CssClass="input-width-md" />
                                     </div>
                                 </asp:Panel>
                             </Rock:RockControlWrapper>
-
+                             
                             <%-- note: using disabled instead of readonly so that we can set the postback value in javascript --%>
                             <Rock:CurrencyBox ID="cbUnallocatedAmount" runat="server" Label="Unallocated Amount" FormGroupCssClass="js-unallocated-amount has-error" Help="The unallocated amount based on the original total amount." disabled="disabled" />
                             <Rock:CurrencyBox ID="cbTotalAmount" runat="server" Label="Total Amount" CssClass="js-total-amount" Help="Allocates amounts to the above account(s) until the total amount matches what is shown on the transaction image." disabled="disabled" Text="0.00"></Rock:CurrencyBox>
@@ -127,7 +133,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <asp:LinkButton ID="btnPrevious" runat="server" CssClass="btn" OnClick="btnPrevious_Click">Previous</asp:LinkButton>
-                            <asp:LinkButton ID="btnNext" runat="server" AccessKey="" CssClass="btn btn-primary pull-right" OnClick="btnNext_Click">Next <i class="fa fa-chevron-right"></i></asp:LinkButton>
+                            <asp:LinkButton ID="btnNext" runat="server" AccessKey="n" ToolTip="Alt+n" CssClass="btn btn-primary pull-right" OnClick="btnNext_Click">Next <i class="fa fa-chevron-right"></i></asp:LinkButton>
                         </div>
                     </div>
 
@@ -137,11 +143,13 @@
             <Rock:ModalDialog ID="mdAccountsPersonalFilter" runat="server" Title="Accounts Filter" OnSaveClick="mdAccountsPersonalFilter_SaveClick">
                 <Content>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-sm-6">
                             <Rock:AccountPicker ID="apDisplayedPersonalAccounts" runat="server" AllowMultiSelect="true" Label="Displayed Accounts" DisplayActiveOnly="true" />
+                            <Rock:RockCheckBox ID="cbOnlyShowSelectedAccounts" runat="server" Label="Limit to Existing" Text="Yes"
+                                Help="If a transaction already has allocated amounts (i.e teller import), should only the accounts with values be displayed by default." />
                             <Rock:AccountPicker ID="apOptionalPersonalAccounts" runat="server" AllowMultiSelect="true" Label="Optional Accounts" DisplayActiveOnly="true" />
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-sm-6">
                             <Rock:CampusPicker ID="cpAccounts" runat="server" Label="Campus" Help="Only display selected accounts that are associated with this campus (or not associated with a campus)." />
                         </div>
                     </div>
@@ -177,7 +185,7 @@
                 }
 
                 $unallocatedAmountEl.find(':input').val((unallocatedAmountCents / 100).toFixed(2));
-                if (unallocatedAmountCents == 0)
+                if (Math.round(unallocatedAmountCents) == 0)
                 {
                     $unallocatedAmountEl.hide();
                 }
@@ -209,19 +217,8 @@
                     return 0;
                         
                 }).appendTo('.js-accounts');
-            })
 
-            // handle onkeypress, onblur for the Add Optional Account dropdown
-            function handleAddAccountBoxEvent(element, event)
-            {
-                console.log(event.type);
-                if ((event.type == 'keydown' && event.keyCode == 13) || event.type == 'blur') {
-                    if ($(element).val() != '') {
-                        $('#<%=btnNext.ClientID%>').attr('disabled', 'disabled');
-                        __doPostBack('<%=ddlAddAccount.ClientID%>', '');
-                    }
-                }
-            }
+            })
 
             // handle onkeypress for the account amount input boxes
             function handleAmountBoxKeyPress(element, keyCode)

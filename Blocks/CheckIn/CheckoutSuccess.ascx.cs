@@ -40,6 +40,10 @@ namespace RockWeb.Blocks.CheckIn
     [Category( "Check-in" )]
     [Description( "Displays the details of a successful check out." )]
 
+    [TextField( "Title", "Title to display.", false, "Checked Out", "Text", 5 )]
+    [TextField( "Detail Message", "The message to display indicating person has been checked out. Use {0} for person, {1} for group, {2} for location, and {3} for schedule.", false,
+        "{0} was checked out of {1} in {2} at {3}.", "Text", 6 )]
+
     public partial class CheckoutSuccess : CheckInBlock
     {
         /// <summary>
@@ -52,8 +56,6 @@ namespace RockWeb.Blocks.CheckIn
 
             RockPage.AddScriptLink( "~/Scripts/CheckinClient/cordova-2.4.0.js", false );
             RockPage.AddScriptLink( "~/Scripts/CheckinClient/ZebraPrint.js" );
-
-            RockPage.AddScriptLink( "~/Scripts/iscroll.js" );
             RockPage.AddScriptLink( "~/Scripts/CheckinClient/checkin-core.js" );
 
             var bodyTag = this.Page.Master.FindControl( "bodyTag" ) as HtmlGenericControl;
@@ -81,6 +83,8 @@ namespace RockWeb.Blocks.CheckIn
                 {
                     try
                     {
+                        lTitle.Text = GetAttributeValue( "Title" );
+
                         var printFromClient = new List<CheckInLabel>();
                         var printFromServer = new List<CheckInLabel>();
 
@@ -106,7 +110,7 @@ namespace RockWeb.Blocks.CheckIn
                                             attendance.Schedule != null )
                                         {
                                             var li = new HtmlGenericControl( "li" );
-                                            li.InnerText = string.Format( "{0} was checked out of {1} in {2} at {3}",
+                                            li.InnerText = string.Format( GetAttributeValue( "DetailMessage" ),
                                                 person.ToString(), attendance.Group.ToString(), attendance.Location.ToString(), attendance.Schedule.ToString() );
 
                                             phResults.Controls.Add( li );
