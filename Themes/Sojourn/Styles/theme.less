@@ -1,0 +1,181 @@
+﻿
+// Load Master Styles
+// -------------------------
+@import "../../../Styles/Bootstrap/variables.less";
+@import "../../../Styles/_rock-core.less";
+@import "../../../Styles/_store.less";
+@import "../../../Styles/_rock-variables.less";
+
+@import "_colors";
+@import "_variables.less";
+@import "_variable-overrides.less";
+@import "_print.less";
+
+@white: #fff;
+@brand-secondary: @theme-2;
+@import "../../../Styles/Bootstrap/utilities.less";
+@import "_mixins";
+
+/*
+    Rock Theme Styles
+
+    1. HTML Overrides
+    2. Bootstrap Overides
+    3. Theme Styling
+    4. Responsive Overrides
+
+*/
+
+// 1. HTML Overrides
+// -------------------------
+
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    display: block;
+}
+
+// 2. Bootstrap Overrides
+// -------------------------
+a:hover,
+a:hover i.fs {
+    text-decoration: none;
+}
+
+a, button, .btn {
+  .transition(~"color .2s ease-in-out, background-color .2s ease-in-out");
+  outline: none;
+  box-shadow: none;
+  &:active, &:focus, &:active:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+button, .btn {
+  border-radius: 0;
+  border-width: 3px;
+  &.note-btn {
+	  border-width: 1px;
+	  font-weight: normal;
+  }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  .new-button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+.btn-primary {
+  .new-button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+// Success appears as green
+.btn-success {
+  .new-button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+// Info appears as blue-green
+.btn-info {
+  .new-button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+}
+// Warning appears as orange
+.btn-warning {
+  .new-button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+// Danger and error appear as red
+.btn-danger {
+  .new-button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
+
+// 3. Theme Styling
+// -------------------------
+.page {
+	position: relative;
+}
+
+.page-icon {
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+#splash.error {
+    background-color: @gray-lighter;
+
+    #content {
+        margin-top: 20px;
+        background-color: @body-bg;
+        border-radius: @border-radius-base;
+        padding: 20px;
+    }
+}
+
+.not-found h2 {
+    font-size: 200px;
+    font-weight: @font-weight-bold;
+    letter-spacing: -5px;
+    line-height: 210px;
+
+    i {
+        color: #F03;
+        font-size: 210px;
+        position: relative;
+        top: -12px;
+    }
+}
+
+/* hide block panels */
+.panel.panel-block {
+    border: 0;
+    box-shadow: none;
+
+    & > .panel-heading,
+    & > .rock-panel-drawer {
+        display: none;
+    }
+
+    & > .panel-body {
+        padding: 0;
+
+        .grid.grid-panel {
+            margin: 0;
+        }
+    }
+}
+
+// 4. Responsive Overrides
+// -------------------------
+
+// default styling should be for phones 767px or less
+
+// Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+    #announcement-rotator {
+        margin: @spacing-lg-px 0;
+    }
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) {
+}
+
+// Large devices (large desktops, 1200px and up)
+@media (min-width: @screen-lg-min) {
+}
+
+
+/*
+@import "_css-overrides.less";
+@import "partials/_preheader";
+@import "partials/_search";
+@import "partials/_navbar";
+@import "partials/_navigation";
+@import "partials/_rotator";
+@import "partials/_sections";
+@import "partials/_sermons";
+@import "partials/_footer";
+*/

@@ -1,0 +1,16 @@
+<h2 class="section-title text-center">{{ ListTitle }}</h2>
+<div class="row">
+{% for occurrence in EventItemOccurrences %}
+  <div class="col-sm-4 text-center event-item">
+  	<div class="event-details">
+    	<p class="event-date">{{ occurrence.Schedule.iCalendarContent | DatesFromICal | First | Date: 'MMM d'  }}</p>
+			<h3 class="event-title">{{ occurrence.EventItem.Name }}</h3>
+			{% if occurrence.EventItem.DetailsUrl != '' %}
+      	<p><a class="btn btn-primary" href="{{ occurrence.EventItem.DetailsUrl }}" role="button">Info</a></p>
+      {% else %}
+				<p><a class="btn btn-primary" href="{{ EventDetailPage }}?EventOccurrenceId={{ occurrence.Id }}" role="button">Info</a></p>
+      {% endif %}
+		</div>
+  </div>
+{% endfor %}
+</div>

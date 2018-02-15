@@ -1,0 +1,277 @@
+.section {
+  background-color: #fff; 
+  padding: 50px 10px 20px;
+  @media (min-width: @screen-md-min) {
+  	padding: 90px 0;
+  }
+  h2, h3 {
+    color: @brand-primary;
+  }
+  h4, h5, h6 {
+    color: @brand-secondary;
+  }
+  p, li {
+    font-size: 20px;
+    line-height: 1.6em;
+  }
+  p {
+    margin-bottom: 1.6em;
+  }
+  blockquote {
+    p {
+      .font(25,bold);
+      color: @brand-secondary;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    &.pullquote {
+      p {
+        .font(25,normal,italic);
+        color: @brand-primary;
+      }
+    }
+  }
+  .page-title {
+    margin-top:0;
+  }
+  .section-title {
+    text-transform: uppercase;
+    font-size: 10vw;
+    color: @text-color;
+    @media (min-width: @screen-sm-min) {
+    	font-size: 55px;
+    }
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    +.section-subtitle {
+      margin-top: 30px;
+    }
+    +* {
+      margin-top: 30px;
+    }
+  }
+  .section-subtitle {
+    text-transform: uppercase;
+    font-size: 29px;
+    letter-spacing: 3px;
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    +.section-title {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+  &.carousel,
+  &.nopad {
+    padding:0;
+  }
+  &.dark {
+    background-color: @brand-secondary;
+    color: #fff;
+    a {
+      color: #fff;
+    }
+    .sermon-title,
+    .section-title {
+      color: #fff;
+    }
+    .btn, .button {
+      color: @white;
+      border-color: @white;
+      &:hover, &:active, &:focus {
+        background-color: @white;
+        color: @brand-primary;
+      }
+    }    
+  }
+  &.hasbg {
+    background-color: @gray;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    padding: 60px 20px 50px;
+    @media (min-width: @screen-sm-min) {
+    	padding: 90px 0;
+    }
+    .section-title {
+      color: @white;
+    }
+    .btn, .button {
+      color: @white;
+      border-color: @white;
+      &:hover, &:active, &:focus {
+        background-color: @white;
+        color: @brand-primary;
+      }
+    }    
+  }
+}
+.intro {
+	.make-row();
+	.block-content {
+	  .make-md-column(8);
+		.make-md-column-offset(2);
+	}
+	p {
+		//margin: 0;
+	}
+  h1,h2,h3 {
+    text-transform: uppercase;
+    font-size: 14vw;
+    color: @brand-primary;
+    @media (min-width: @screen-sm-min) {
+    	.font(55,bold);
+    }
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    +* {
+      margin-top: 30px;
+    }
+  }
+}
+.current-series {
+  p {
+    margin:0;
+  }
+  ul, ol {
+	  margin: 0;
+	  padding: 0;
+	  list-style-type: none;
+	  li {
+		  margin: 0;
+		  padding: 0;
+	  }
+  }
+  .sermon-title {
+    font-size: 12vw;
+    font-weight: 900;
+    color: @white;
+    @media (min-width: @screen-sm-min) {
+    	font-size: 72px;
+    }
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .sermon-subtitle {
+    text-transform: uppercase;
+    font-size: 8vw;
+    @media (min-width: @screen-sm-min) {
+    	font-size: 29px;
+    }
+    letter-spacing: 3px;
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    +.section-title {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+  .sermon-links {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    li {
+      border-left: solid 2px #fff;
+      padding-left: 5px;
+      &:first-child {
+        border-left:none;
+        padding-left: 0;
+      }
+      a { 
+        color: @white;
+      }
+    }
+  }
+}
+.tier-2-links {
+  .linkbox {
+    text-align: center;
+    a {
+      display: block;
+      height: 100vw;
+      @media (min-width: @screen-sm-min) {
+      	height: 30vw;
+      }
+      background-color: @gray;
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center center;
+      &:hover, &:active, &:focus {
+        background-color: @gray-light;
+      }
+      span {
+	      padding: 20px;
+        .font(45, bold);
+        @media (min-width: @screen-sm-min) {
+        	.font(35, bold);
+        }
+        @media (min-width: @screen-md-min) {
+        	.font(55, bold);
+        }
+        color: #fff;
+        text-transform: uppercase;
+        .vc();
+        position: relative;
+        display: block;
+      }
+    }
+  }
+}
+.upcoming-events {
+  padding: 90px 0;
+	.event-item {
+		//height: 350px;
+	  .event-details {
+	    padding: 20px;
+	    //margin-top: 50%;
+	    //transform:translateY(-50%);
+	    .btn {
+	      display: block;
+	      margin-bottom: 5px;
+	      @media (min-width: @screen-md-min) {
+	      	display: inline-block;
+	        margin-bottom: 0;
+	      }      
+	    }
+	    .event-date {
+	      .font(24);
+	      margin-bottom: 0;
+	      text-transform: uppercase;
+	    }
+	    .event-title {
+	      .font(30, bold);
+	      color: @text-color;
+	      margin: 10px 0 15px;
+	      /*@media (min-width: @screen-sm-min) {
+	      	.font(30, bold);
+	      }
+	      @media (min-width: @screen-md-min) {
+	      	.font(50, bold);
+	      }*/
+	      text-transform: uppercase;
+	    }
+	  }
+	}
+}
+.separator {
+//    min-height: 360px;
+    background-position: center center;
+    background-size: cover;
+//    background-attachment: fixed;
+  .section-title {
+    text-transform: uppercase;
+    font-size: 10vw;
+    color: @white;
+    @media (min-width: @screen-sm-min) {
+    	font-size: 55px;
+    }
+    line-height: 1em;
+    padding: 120px 0;
+  }
+}

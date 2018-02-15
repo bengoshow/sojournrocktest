@@ -1,0 +1,302 @@
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+@navbar-height: 40px;
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  margin-top: 0;
+  .navbar {
+    margin: 0;
+    background:none;	
+    @media (min-width: @screen-sm-min) {
+    	margin: 20px 0 0;
+    }
+    .logo {
+      .font(22,bold,normal);
+      width: 245px;
+      line-height: 1.2em;
+      color: #fff;
+      text-transform: uppercase;
+      padding:20px 10px 10px;
+      display: block;
+      margin-top:0px;
+      @media (min-width: @screen-sm-min) {
+      	float:left;
+      	display: inline;
+        padding:0;
+        width: auto;
+        max-width: 50%;
+      }
+      @media (min-width: @screen-md-min) {
+      	.font(25,bold,normal);
+      	max-width: 30%;
+      	//margin-top:15px;
+      }
+      &:hover {
+        color: @gray;
+      }
+      i {
+        font-size: @navbar-height;
+        float: left;
+        margin-right: 10px;
+      }
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+    .quick-links {
+      display: none;
+      @media (min-width: @screen-md-min) {
+      	display:inline;
+      }
+      li {
+        .font(19,bold);
+        text-transform: uppercase;
+        margin: 0;
+        position: relative;
+        a {
+          color: #fff;
+          line-height: @navbar-height;
+          padding: 25px;
+          line-height: 1;
+          display: inline-block;
+          &:hover {
+            color: @brand-primary;
+          }
+          &.placeholder {
+            cursor: default;
+          }
+        }
+        ul {
+          display: none;
+          position: absolute;
+          z-index: 999;
+          top:46px;
+          left:0;
+          width: 300px;
+          background: fade(@brand-primary, 95%);
+          padding: 0;
+          margin:0;
+          text-align: left;
+          li {
+            a:hover {
+              color: @brand-secondary;
+            }
+          }
+          ul {
+            margin:0;
+            padding:0;
+            li {
+              margin:0;
+              padding:0;
+            }
+          }
+        }
+        &:hover {
+          a {
+            background-color: @brand-primary;
+            transition: none;
+            color: @white;
+          }
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
+    .search-opener {
+      i {
+        font-size: 18.5px;
+      }
+      margin: 0 25px;
+      color: #fff;
+      display: none;
+      @media (min-width: @screen-sm-min) {
+      	display: inline;
+      }
+      &:hover {
+        color: @brand-primary;
+      }
+    }
+    .menu-opener {
+      text-transform: uppercase;
+      margin: 0px;
+      .font(19, bold);
+      width: 50px;
+      height: 56px;
+      text-indent: -999em;
+      display: block;
+      background: none;
+      color: @white;
+      position: absolute;
+      top:9px;
+      right: 15px;
+      @media (min-width: @screen-xs-min) {
+      }
+      @media (min-width: @screen-sm-min) {
+        position: relative;
+      	text-indent: 0;
+      	display: inline;
+      	padding:0;
+      	width: auto;
+      	height: auto;
+      	top:auto;
+      	right:auto;
+      }
+      &.affix {
+        @media (max-width: @screen-xs-max) {
+        	position: fixed;
+          i {
+            background-color: fade(@gray-light,50%);  
+          }
+        }
+      }
+      &:hover {
+        color: @brand-primary;
+      }
+      i {
+        position: absolute;
+        top:0;
+        right:0;
+        text-indent: 0;
+        padding: 10px;
+        .font(36);
+        .transition(background-color .2s ease-in-out);
+        @media (min-width: @screen-sm-min) {
+        	position: relative;
+        	.font(19);
+        	top:auto;
+        	right:auto;
+        	margin-left: 10px;
+        }
+      } 
+    }
+  }
+}
+#locations {
+  &:hover {
+    a {
+      background: #fff;
+      color: @brand-primary;
+    }
+    .location_menu {
+      display: block;
+    }
+  }
+  .location_menu {
+    display: none;
+    position: absolute;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+    z-index: 999;
+    top:46px;
+    left:0;
+    width: 300px;
+    background: fade(@brand-primary, 95%);
+    padding: 0;
+    margin:0;
+    text-align: left;
+    ul {
+      margin:0;
+      padding:0;
+      li {
+        margin:0;
+        padding:0;
+      }
+    }
+    .location {
+      display: block;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        border: solid 1px #fff;
+        margin: 0;
+        top:-2px;
+        left:25px;
+        right: 25px;
+      }
+      &:first-child:before {
+        border: none;
+      }
+      &:hover:before {
+        border:none;
+      }
+      i.fa {
+        position: absolute;
+        bottom:30px;
+        right:30px;
+        font-size: 26px;
+        color: #fff;
+        margin: 3px 0 0 3px;
+      }
+      p {
+        .font(15);
+        line-height: 1.3em;
+        color:@white;
+        margin: 0 0 5px;
+        font-weight: normal;
+        &.name {
+          .font(19);
+        }
+        &.address {
+          text-transform: none;
+        }
+      }
+      a {
+        display: block;
+        padding:25px;
+        background: none;
+        &:hover {
+          background: @white;
+          i.fa {
+            color: @brand-primary;
+          }
+          p {
+            color: @brand-primary;
+          }
+          div.servicetimes * {
+            color: @brand-primary;
+          }
+        }
+      }
+      div.servicetimes {
+        * {
+          .font(15, inherit);
+          margin:0;
+          padding:0;
+          color: @white;
+        }
+        h5, strong {
+          font-weight: bold;
+        }
+        ul {
+          margin-bottom: 5px;
+          &:after {
+            display: block;
+            content: "";
+            clear: both;
+          }
+        }
+        li {
+          font-weight: normal;
+          display: inline;
+          float: left;
+          &:before {
+            content: ", "
+          }
+          &:first-child:before {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}

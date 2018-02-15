@@ -1,0 +1,17 @@
+<div class="searchbox">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-sm-11">
+        <div id="searchForm" class="input-group">
+          <input type="text" id="search_term" name="keywords" class="form-control" placeholder="search">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><i class="fa fa-search fa-flip-horizontal"></i></button>
+          </span>
+        </div>
+      </div>
+      <div class="col-xs-2 col-sm-1">
+        <a class="search-closer" href="#">&times;</a>
+      </div>
+    </div>
+  </div>
+</div>

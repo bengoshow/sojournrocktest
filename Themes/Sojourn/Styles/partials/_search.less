@@ -1,0 +1,32 @@
+.universal-search {
+  display: none;
+  background-color: @gray-light;
+  color: @text-color;
+  padding: 20px 0;
+  .search-closer {
+    .font(36,bold);
+    color: @gray-dark;
+  }
+  .container {
+    padding: 0 20px;
+    @media (min-width: @screen-sm-min) {
+    	padding: 0 10px;
+    }
+  }
+  input {
+    border: none;
+    box-shadow: none;
+    height: auto;
+    line-height: 24px;
+    padding: 13px 14px;
+    @media (min-width: @screen-sm-min) {
+    	padding: 13px 31px;
+    }
+  }
+  button {
+    border: none;
+    height: auto;
+    padding: 15px 20px;
+    margin:0;
+  }
+}

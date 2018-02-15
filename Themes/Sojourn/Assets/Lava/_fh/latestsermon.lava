@@ -1,0 +1,24 @@
+﻿{% assign currentSeries = Items | First %}
+{% assign currentSeriesImageGuid = currentSeries | Attribute:'SeriesImage','RawValue' %}
+
+<div class="section dark hasbg" style="background-image: url('/GetImage.ashx?Guid={{ currentSeriesImageGuid }}')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 last text-center">
+				{% for item in Items %}
+            <p class="sermon-subtitle">Current Series</p>
+            <h2 class="sermon-title">{{ item.Title }}</h2>
+            <ul class="sermon-links inline-list">
+							<li>{{ item.StartDateTime | Date:'MMMM d, yyyy' }} 
+								{% if item.StartDateTime != item.ExpireDateTime %}
+									- {{ item.ExpireDateTime | Date:'MMMM d, yyyy' }}
+								{% endif %}
+							</li>
+            </ul>
+            <p><a class="btn btn-default btn-lg btn-hover-hollow" href="{{ LinkedPages.DetailPage }}?Item={{ item.Id }}" role="button">Watch or Listen</a>
+            	<a class="btn btn-default btn-lg btn-hover-hollow" href="/sermons" role="button">All Sermons</a></p>
+        {% endfor %}
+      </div><!-- /.col-md-8 -->
+    </div><!-- /.row -->
+  </div>
+</div>
