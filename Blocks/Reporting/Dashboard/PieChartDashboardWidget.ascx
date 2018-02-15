@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Reporting.Dashboard.PieChartDashboardWidget, App_Web_rx4pg1wp" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PieChartDashboardWidget.ascx.cs" Inherits="RockWeb.Blocks.Reporting.Dashboard.PieChartDashboardWidget" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Finance.PledgeList, App_Web_hev3kkhl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PledgeList.ascx.cs" Inherits="RockWeb.Blocks.Finance.PledgeList" %>
 
 <asp:UpdatePanel ID="upPanel" runat="server">
     <ContentTemplate>

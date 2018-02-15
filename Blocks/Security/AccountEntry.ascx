@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Security.AccountEntry, App_Web_uycipygy" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="AccountEntry.ascx.cs" Inherits="RockWeb.Blocks.Security.AccountEntry" %>
 <script type="text/javascript">
 
     Sys.Application.add_load(function () {

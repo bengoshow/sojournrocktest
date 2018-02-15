@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Core.LocationTreeView, App_Web_mt5rbvwh" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="LocationTreeView.ascx.cs" Inherits="RockWeb.Blocks.Core.LocationTreeView" %>
 
 <asp:UpdatePanel ID="upLocationType" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="false">
     <ContentTemplate>

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.BulkImport.BulkImportTool, App_Web_dg2pijpc" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BulkImportTool.ascx.cs" Inherits="RockWeb.Blocks.BulkImport.BulkImportTool" %>
 
 <script src="/SignalR/hubs"></script>
 <script type="text/javascript">

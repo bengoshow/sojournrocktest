@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Groups.GroupTypes, App_Web_l1bcc5cr" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="GroupTypeDetail.ascx.cs" Inherits="RockWeb.Blocks.Groups.GroupTypes" %>
 
 <script type="text/javascript">
     function clearActiveDialog() {

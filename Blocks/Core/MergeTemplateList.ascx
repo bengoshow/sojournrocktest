@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Core.MergeTemplateList, App_Web_mt5rbvwh" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="MergeTemplateList.ascx.cs" Inherits="RockWeb.Blocks.Core.MergeTemplateList" %>
 
 <asp:UpdatePanel ID="upMergeTemplateList" runat="server">
     <ContentTemplate>

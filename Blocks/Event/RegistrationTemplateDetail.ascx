@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Event.RegistrationTemplateDetail, App_Web_jnaoe4ml" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="RegistrationTemplateDetail.ascx.cs" Inherits="RockWeb.Blocks.Event.RegistrationTemplateDetail" %>
 
 <script type="text/javascript">
 

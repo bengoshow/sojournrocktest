@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.CheckIn.GroupSelect, App_Web_2ulo5pm4" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="GroupSelect.ascx.cs" Inherits="RockWeb.Blocks.CheckIn.GroupSelect" %>
 
 <script type="text/javascript">
     Sys.Application.add_load(function () {

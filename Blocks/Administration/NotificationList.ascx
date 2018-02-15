@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Utility.NotificationList, App_Web_mse23pgs" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NotificationList.ascx.cs" Inherits="RockWeb.Blocks.Utility.NotificationList" %>
 
 <asp:UpdatePanel ID="upnlContent" UpdateMode="Conditional" runat="server">
     <ContentTemplate>

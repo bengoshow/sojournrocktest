@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Security.UserLoginList, App_Web_uycipygy" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UserLoginList.ascx.cs" Inherits="RockWeb.Blocks.Security.UserLoginList" %>
 
 <script type="text/javascript">
     function clearActiveDialog() {

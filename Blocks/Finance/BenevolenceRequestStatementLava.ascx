@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Finance.BenevolenceRequestStatementLava, App_Web_hev3kkhl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BenevolenceRequestStatementLava.ascx.cs" Inherits="RockWeb.Blocks.Finance.BenevolenceRequestStatementLava" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

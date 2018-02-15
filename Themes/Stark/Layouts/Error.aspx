@@ -1,4 +1,4 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="RockWeb.Themes.Stark.Layouts.Error, App_Web_xgqvtigz" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Error.aspx.cs" Inherits="RockWeb.Themes.Stark.Layouts.Error" %>
 
 <!DOCTYPE html>
 

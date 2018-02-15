@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Finance.TransactionYearlySummaryLava, App_Web_hev3kkhl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="TransactionYearlySummaryLava.ascx.cs" Inherits="RockWeb.Blocks.Finance.TransactionYearlySummaryLava" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

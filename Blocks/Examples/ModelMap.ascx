@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Examples.ModelMap, App_Web_2ryr2h2l" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ModelMap.ascx.cs" Inherits="RockWeb.Blocks.Examples.ModelMap" %>
 
 <asp:UpdatePanel ID="upPanel" runat="server">
     <ContentTemplate>

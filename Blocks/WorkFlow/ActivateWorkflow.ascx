@@ -1,3 +1,3 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.WorkFlow.ActivateWorkflow, App_Web_1c3jy2fp" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ActivateWorkflow.ascx.cs" Inherits="RockWeb.Blocks.WorkFlow.ActivateWorkflow" %>
 
 <Rock:NotificationBox ID="nbError" runat="server" NotificationBoxType="Danger" />

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Store.AccountRedirect, App_Web_uj4fk0av" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="AccountRedirect.ascx.cs" Inherits="RockWeb.Blocks.Store.AccountRedirect" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

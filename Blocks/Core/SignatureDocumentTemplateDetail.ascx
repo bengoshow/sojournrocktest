@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Core.SignatureDocumentTemplateDetail, App_Web_gnnfajiz" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SignatureDocumentTemplateDetail.ascx.cs" Inherits="RockWeb.Blocks.Core.SignatureDocumentTemplateDetail" %>
 
 <asp:UpdatePanel ID="upnlSettings" runat="server">
     <ContentTemplate>

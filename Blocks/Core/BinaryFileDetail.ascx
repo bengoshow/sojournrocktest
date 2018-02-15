@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Core.BinaryFileDetail, App_Web_gnnfajiz" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BinaryFileDetail.ascx.cs" Inherits="RockWeb.Blocks.Core.BinaryFileDetail" %>
 
 <asp:UpdatePanel ID="upBinaryFile" runat="server">
     <ContentTemplate>

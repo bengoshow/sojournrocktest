@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Event.EventItemOccurrenceLava, App_Web_0z3yfgxn" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="EventItemOccurrenceLava.ascx.cs" Inherits="RockWeb.Blocks.Event.EventItemOccurrenceLava" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

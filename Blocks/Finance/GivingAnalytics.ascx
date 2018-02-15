@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Finance.GivingAnalytics, App_Web_hev3kkhl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="GivingAnalytics.ascx.cs" Inherits="RockWeb.Blocks.Finance.GivingAnalytics" %>
 
 <style>
     .filter-options .rock-check-box-list label {

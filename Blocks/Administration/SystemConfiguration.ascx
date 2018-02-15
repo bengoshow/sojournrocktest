@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Administration.SystemConfiguration, App_Web_mse23pgs" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SystemConfiguration.ascx.cs" Inherits="RockWeb.Blocks.Administration.SystemConfiguration" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

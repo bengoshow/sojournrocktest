@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.CheckIn.Manager.SelectArea, App_Web_2120jgia" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SelectArea.ascx.cs" Inherits="RockWeb.Blocks.CheckIn.Manager.SelectArea" %>
 
 <Rock:RockUpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Cms.ContentChannelItemView, App_Web_n1ftjhpi" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ContentChannelItemView.ascx.cs" Inherits="RockWeb.Blocks.Cms.ContentChannelItemView" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

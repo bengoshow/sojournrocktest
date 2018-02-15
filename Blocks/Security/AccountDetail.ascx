@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Security.AccountDetail, App_Web_uycipygy" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="AccountDetail.ascx.cs" Inherits="RockWeb.Blocks.Security.AccountDetail" %>
 
 <script>
     $(function () {

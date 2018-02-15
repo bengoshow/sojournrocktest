@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Cms.FileManager, App_Web_n1ftjhpi" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="FileManager.ascx.cs" Inherits="RockWeb.Blocks.Cms.FileManager" %>
 
 <asp:UpdatePanel runat="server" ID="upnlContent">
     <ContentTemplate>

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Core.NoteTypes, App_Web_gnnfajiz" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NoteTypes.ascx.cs" Inherits="RockWeb.Blocks.Core.NoteTypes" %>
 
 <asp:UpdatePanel ID="upPanel" runat="server">
     <ContentTemplate>

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Security.ChangePassword, App_Web_uycipygy" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ChangePassword.ascx.cs" Inherits="RockWeb.Blocks.Security.ChangePassword" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

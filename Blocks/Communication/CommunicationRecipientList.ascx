@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Communication.CommunicationRecipientList, App_Web_nuuztxu2" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CommunicationRecipientList.ascx.cs" Inherits="RockWeb.Blocks.Communication.CommunicationRecipientList" %>
 
 <asp:UpdatePanel ID="upPanel" runat="server">
     <ContentTemplate>

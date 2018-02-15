@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Finance.TransactionEntityMatching, App_Web_l4diilw4" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="TransactionEntityMatching.ascx.cs" Inherits="RockWeb.Blocks.Finance.TransactionEntityMatching" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

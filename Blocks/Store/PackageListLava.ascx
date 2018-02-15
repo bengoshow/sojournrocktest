@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Store.PackageListLava, App_Web_uj4fk0av" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PackageListLava.ascx.cs" Inherits="RockWeb.Blocks.Store.PackageListLava" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

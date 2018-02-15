@@ -1,4 +1,4 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="GatewayStep2Return, App_Web_nsd2u05p" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GatewayStep2Return.aspx.cs" Inherits="GatewayStep2Return" %>
 
 <!DOCTYPE html>
 

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Store.PackageInstall, App_Web_uj4fk0av" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PackageInstall.ascx.cs" Inherits="RockWeb.Blocks.Store.PackageInstall" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

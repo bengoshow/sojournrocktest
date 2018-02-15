@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Core.ScheduleDetail, App_Web_mt5rbvwh" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ScheduleDetail.ascx.cs" Inherits="RockWeb.Blocks.Core.ScheduleDetail" %>
 
 <asp:UpdatePanel ID="upScheduleDetail" runat="server">
     <ContentTemplate>

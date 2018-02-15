@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Event.EventCalendarItemPersonalizedRegistration, App_Web_jnaoe4ml" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="EventCalendarItemPersonalizedRegistration.ascx.cs" Inherits="RockWeb.Blocks.Event.EventCalendarItemPersonalizedRegistration" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

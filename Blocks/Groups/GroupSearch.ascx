@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Groups.GroupSearch, App_Web_l1bcc5cr" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="GroupSearch.ascx.cs" Inherits="RockWeb.Blocks.Groups.GroupSearch" %>
 
 <div class="grid">
     <Rock:Grid ID="gGroups" runat="server" EmptyDataText="No Groups Found">

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Store.LinkOrganization, App_Web_uj4fk0av" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="LinkOrganization.ascx.cs" Inherits="RockWeb.Blocks.Store.LinkOrganization" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

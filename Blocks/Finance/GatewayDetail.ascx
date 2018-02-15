@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Finance.GatewayDetail, App_Web_hev3kkhl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="GatewayDetail.ascx.cs" Inherits="RockWeb.Blocks.Finance.GatewayDetail" %>
 
 <asp:UpdatePanel ID="pnlGatewayListUpdatePanel" runat="server">
     <ContentTemplate>

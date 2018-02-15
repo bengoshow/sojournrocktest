@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Communication.SystemEmailList, App_Web_nuuztxu2" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SystemEmailList.ascx.cs" Inherits="RockWeb.Blocks.Communication.SystemEmailList" %>
 
 <asp:UpdatePanel ID="upSettings" runat="server">
     <ContentTemplate>

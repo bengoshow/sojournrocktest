@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Crm.PersonDetail.Relationships, App_Web_wuw5dahn" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Relationships.ascx.cs" Inherits="RockWeb.Blocks.Crm.PersonDetail.Relationships" %>
 <asp:UpdatePanel ID="upRelationships" runat="server">
     <ContentTemplate>
 

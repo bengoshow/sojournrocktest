@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Cms.EmailForm, App_Web_n1ftjhpi" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="EmailForm.ascx.cs" Inherits="RockWeb.Blocks.Cms.EmailForm" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

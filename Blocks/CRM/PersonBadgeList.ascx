@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Crm.PersonBadgeList, App_Web_w00rfnqj" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PersonBadgeList.ascx.cs" Inherits="RockWeb.Blocks.Crm.PersonBadgeList" %>
 
 <asp:UpdatePanel ID="upPersonBadge" runat="server">
     <ContentTemplate>

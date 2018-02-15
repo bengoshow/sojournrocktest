@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Groups.GroupSimpleRegisterConfirm, App_Web_l1bcc5cr" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="GroupSimpleRegisterConfirm.ascx.cs" Inherits="RockWeb.Blocks.Groups.GroupSimpleRegisterConfirm" %>
 
 <div class="panel panel-default">
     <div class="panel-body">

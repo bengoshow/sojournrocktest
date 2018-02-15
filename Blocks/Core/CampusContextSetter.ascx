@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Core.CampusContextSetter, App_Web_mt5rbvwh" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CampusContextSetter.ascx.cs" Inherits="RockWeb.Blocks.Core.CampusContextSetter" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

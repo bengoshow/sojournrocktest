@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Utility.HtmlEditorFileBrowser, App_Web_sbfpvc2u" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="HtmlEditorFileBrowser.ascx.cs" Inherits="RockWeb.Blocks.Utility.HtmlEditorFileBrowser" %>
 
 <asp:Panel ID="pnlModalHeader" runat="server" Visible="false">
     <h3 class="modal-title">

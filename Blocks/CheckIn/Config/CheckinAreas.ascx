@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.CheckIn.Config.CheckinAreas, App_Web_bv1kj02w" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CheckinAreas.ascx.cs" Inherits="RockWeb.Blocks.CheckIn.Config.CheckinAreas" %>
 
 <style>
     .checkin-item {

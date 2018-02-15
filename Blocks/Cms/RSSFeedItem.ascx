@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Cms.RSSFeedItem, App_Web_n1ftjhpi" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="RSSFeedItem.ascx.cs" Inherits="RockWeb.Blocks.Cms.RSSFeedItem" %>
 <asp:UpdatePanel ID="upContent" runat="server" >
     <ContentTemplate>
         <Rock:NotificationBox ID="nbRssItem" runat="server" NotificationBoxType="Info" />

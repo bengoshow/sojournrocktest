@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.CheckIn.CheckoutSuccess, App_Web_2ulo5pm4" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CheckoutSuccess.ascx.cs" Inherits="RockWeb.Blocks.CheckIn.CheckoutSuccess" %>
 <asp:UpdatePanel ID="upContent" runat="server">
 <ContentTemplate>
 

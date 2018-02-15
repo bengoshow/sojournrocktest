@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Security.ConfirmAccount, App_Web_uycipygy" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ConfirmAccount.ascx.cs" Inherits="RockWeb.Blocks.Security.ConfirmAccount" %>
 <asp:UpdatePanel ID="upnlContent" runat="server">
 <ContentTemplate>
 

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Finance.TransactionEntryKiosk, App_Web_l4diilw4" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="TransactionEntry.Kiosk.ascx.cs" Inherits="RockWeb.Blocks.Finance.TransactionEntryKiosk" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

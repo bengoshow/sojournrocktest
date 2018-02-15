@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Examples.DevelopEnvironmentInfo, App_Web_2ryr2h2l" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="DevelopEnvironmentInfo.ascx.cs" Inherits="RockWeb.Blocks.Examples.DevelopEnvironmentInfo" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

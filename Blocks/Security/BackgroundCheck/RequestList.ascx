@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Security.BackgroundCheck.RequestList, App_Web_irnnvfmh" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="RequestList.ascx.cs" Inherits="RockWeb.Blocks.Security.BackgroundCheck.RequestList" %>
 
 <asp:UpdatePanel ID="upList" runat="server">
     <ContentTemplate>

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Core.Campuses, App_Web_gnnfajiz" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CampusList.ascx.cs" Inherits="RockWeb.Blocks.Core.Campuses" %>
 
 <asp:UpdatePanel ID="upCampusList" runat="server">
     <ContentTemplate>

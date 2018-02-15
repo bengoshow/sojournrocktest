@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Reporting.DataViewDetail, App_Web_2dk4zl1h" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="DataViewDetail.ascx.cs" Inherits="RockWeb.Blocks.Reporting.DataViewDetail" %>
 <asp:UpdatePanel ID="upDataView" runat="server">
     <ContentTemplate>
 

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Reporting.SqlCommand, App_Web_2dk4zl1h" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SqlCommand.ascx.cs" Inherits="RockWeb.Blocks.Reporting.SqlCommand" %>
 
 <asp:UpdatePanel ID="upReport" runat="server">
     <ContentTemplate>

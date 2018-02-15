@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Reporting.DynamicHeatMap, App_Web_2dk4zl1h" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="DynamicHeatMap.ascx.cs" Inherits="RockWeb.Blocks.Reporting.DynamicHeatMap" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server" UpdateMode="Conditional">
     <ContentTemplate>

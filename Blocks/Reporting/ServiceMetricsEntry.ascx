@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Reporting.ServiceMetricsEntry, App_Web_2dk4zl1h" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ServiceMetricsEntry.ascx.cs" Inherits="RockWeb.Blocks.Reporting.ServiceMetricsEntry" %>
 
 
 

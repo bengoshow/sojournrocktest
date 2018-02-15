@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.CheckIn.Config.EditLabel, App_Web_bv1kj02w" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="EditLabel.ascx.cs" Inherits="RockWeb.Blocks.CheckIn.Config.EditLabel" %>
 
 <asp:UpdatePanel ID="upnlDevice" runat="server">
     <ContentTemplate>

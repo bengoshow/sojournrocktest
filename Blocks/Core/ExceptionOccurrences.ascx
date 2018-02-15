@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Administration.ExceptionOccurrences, App_Web_gnnfajiz" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ExceptionOccurrences.ascx.cs" Inherits="RockWeb.Blocks.Administration.ExceptionOccurrences" %>
 
 <asp:UpdatePanel ID="upExceptionList" runat="server">
     <ContentTemplate>

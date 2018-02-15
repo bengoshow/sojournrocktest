@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="false" inherits="RockWeb.Blocks.Cms.HtmlContentDetail, App_Web_n1ftjhpi" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" CodeFile="HtmlContentDetail.ascx.cs" Inherits="RockWeb.Blocks.Cms.HtmlContentDetail" %>
 
 <asp:UpdatePanel runat="server" ID="upnlHtmlContent" ChildrenAsTriggers="false" UpdateMode="Conditional">
     <ContentTemplate>

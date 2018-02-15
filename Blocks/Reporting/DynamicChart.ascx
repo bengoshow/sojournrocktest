@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Reporting.DynamicChart, App_Web_2dk4zl1h" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="DynamicChart.ascx.cs" Inherits="RockWeb.Blocks.Reporting.DynamicChart" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

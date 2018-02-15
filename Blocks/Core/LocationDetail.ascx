@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Core.LocationDetail, App_Web_gnnfajiz" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="LocationDetail.ascx.cs" Inherits="RockWeb.Blocks.Core.LocationDetail" %>
 
 <asp:UpdatePanel ID="upnlLocationList" runat="server">
     <ContentTemplate>

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Crm.BulkUpdate, App_Web_w00rfnqj" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BulkUpdate.ascx.cs" Inherits="RockWeb.Blocks.Crm.BulkUpdate" %>
 
 <asp:UpdatePanel ID="upPanel" runat="server">
     <ContentTemplate>

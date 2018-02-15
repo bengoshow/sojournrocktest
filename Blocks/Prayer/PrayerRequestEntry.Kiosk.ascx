@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Prayer.PrayerRequestEntryKiosk, App_Web_f1mejhbe" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PrayerRequestEntry.Kiosk.ascx.cs" Inherits="RockWeb.Blocks.Prayer.PrayerRequestEntryKiosk" %>
 <asp:UpdatePanel ID="upAdd" runat="server">
     <ContentTemplate>
         <asp:Panel runat="server" ID="pnlForm">

@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Cms.PageRouteList, App_Web_n1ftjhpi" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PageRouteList.ascx.cs" Inherits="RockWeb.Blocks.Cms.PageRouteList" %>
 
 <asp:UpdatePanel ID="upPageRoutes" runat="server">
     <ContentTemplate>

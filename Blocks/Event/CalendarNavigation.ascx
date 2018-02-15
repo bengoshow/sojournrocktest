@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Event.CalendarNavigation, App_Web_jnaoe4ml" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CalendarNavigation.ascx.cs" Inherits="RockWeb.Blocks.Event.CalendarNavigation" %>
 
 <asp:UpdatePanel ID="pnlContent" runat="server">
     <ContentTemplate>

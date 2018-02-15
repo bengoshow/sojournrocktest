@@ -1,1 +1,1 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.CheckIn.MobileEntry, App_Web_2ulo5pm4" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="MobileEntry.ascx.cs" Inherits="RockWeb.Blocks.CheckIn.MobileEntry" %>

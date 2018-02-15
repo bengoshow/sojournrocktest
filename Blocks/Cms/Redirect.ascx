@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Cms.Redirect, App_Web_n1ftjhpi" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Redirect.ascx.cs" Inherits="RockWeb.Blocks.Cms.Redirect" %>
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>
         <Rock:NotificationBox ID="nbAlert" runat="server" NotificationBoxType="Danger" />

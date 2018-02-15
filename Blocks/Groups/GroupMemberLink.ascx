@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Groups.GroupMemberLink, App_Web_l1bcc5cr" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="GroupMemberLink.ascx.cs" Inherits="RockWeb.Blocks.Groups.GroupMemberLink" %>
 
 <div class="panel panel-default">
     <div class="panel-body">

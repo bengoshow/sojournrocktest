@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Core.CampusScheduleContextSetter, App_Web_gnnfajiz" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CampusScheduleContextSetter.ascx.cs" Inherits="RockWeb.Blocks.Core.CampusScheduleContextSetter" %>
 
 <style>
     .setter-state {

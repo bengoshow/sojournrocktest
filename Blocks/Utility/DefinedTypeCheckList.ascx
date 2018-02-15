@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Utility.DefinedTypeCheckList, App_Web_sbfpvc2u" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="DefinedTypeCheckList.ascx.cs" Inherits="RockWeb.Blocks.Utility.DefinedTypeCheckList" %>
 
 <asp:UpdatePanel ID="upSettings" runat="server">
     <ContentTemplate>

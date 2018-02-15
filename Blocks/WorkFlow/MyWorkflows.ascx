@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.WorkFlow.MyWorkflows, App_Web_1c3jy2fp" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="MyWorkflows.ascx.cs" Inherits="RockWeb.Blocks.WorkFlow.MyWorkflows" %>
 
 <asp:UpdatePanel ID="upnlContent" runat="server">
     <ContentTemplate>

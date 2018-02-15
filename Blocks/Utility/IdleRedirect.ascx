@@ -1,1 +1,1 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Utility.IdleRedirect, App_Web_sbfpvc2u" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="IdleRedirect.ascx.cs" Inherits="RockWeb.Blocks.Utility.IdleRedirect" %>

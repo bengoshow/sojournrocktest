@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="RockWeb.Blocks.Cms.ContentChannelView, App_Web_n1ftjhpi" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ContentChannelView.ascx.cs" Inherits="RockWeb.Blocks.Cms.ContentChannelView" %>
 
 <script type="text/javascript">
     function clearDialog() {
