@@ -1,10 +1,22 @@
 {% if Page.DisplayChildPages == 'true' and Page.Pages != empty %}
-    <ul class="nav navbar-nav">
-
+  <ul class="nav navbar-nav navbar-right">
 		{% for childPage in Page.Pages %}
-            <li{% if childPage.Current == 'true' %} class="active"{% endif%}>
+      <li class="{% if childPage.Current == 'true' %}active{% endif%}{% if childPage.DisplayChildPages == 'true' and childPage.Pages != empty %} dropdown{% endif%}">
+			{% if childPage.DisplayChildPages == 'true' and childPage.Pages != empty %}
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ childPage.Title }} <span class="caret"></span></a>
+			{% else %}
 				<a href="{{ childPage.Url }}">{{ childPage.Title }}</a>
-            </li>
+			{% endif %}
+			{% if childPage.DisplayChildPages == 'true' and childPage.Pages != empty %}
+		    <ul class="dropdown-menu">
+				{% for grandChildPage in childPage.Pages %}
+          <li{% if grandChildPage.Current == 'true' %} class="active"{% endif%}>
+						<a href="{{ grandChildPage.Url }}">{{ grandChildPage.Title }}</a>
+          </li>
         {% endfor %}
-    </ul>
+		    </ul>
+			{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
 {% endif %}

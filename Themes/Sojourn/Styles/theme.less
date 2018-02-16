@@ -35,7 +35,7 @@ main {
 // -------------------------
 
 .navbar {
-    position: static; // default is relative which causes the dropdowns to go under the other navbars dispite having a higher z-index - JME 9/9/2013
+    //position: static; // default is relative which causes the dropdowns to go under the other navbars dispite having a higher z-index - JME 9/9/2013
     // using fontawesome nav toggle button instead of the BS default
     .navbar-toggle {
         padding: 6px 10px;
@@ -64,7 +64,7 @@ header {
     }
 
     .navbar {
-        background-color: @header-bg;
+        //background-color: @header-bg;
         border: 0;
     }
 }
@@ -183,6 +183,3 @@ footer {
 // Large devices (large desktops, 1200px and up)
 @media (min-width: @screen-lg-min) {
 }
-
-
-@import "_css-overrides.less";
