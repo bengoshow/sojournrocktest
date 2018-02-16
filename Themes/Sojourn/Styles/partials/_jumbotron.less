@@ -1,0 +1,37 @@
+.jumbotron {
+	.aspect-ratio(1920,1080);
+	max-height: 100vh;
+	text-align: center;
+	.vc {
+		position: relative;
+		.vc();
+	}
+	h1 {
+		text-transform: uppercase;
+		letter-spacing: 6px;
+		margin-bottom: 1em;
+	}
+}
+.campus-list {
+	background: @white;
+	text-align: center;
+	transform: translateY(-100%);
+	padding: 20px;
+	ul {
+		margin:0;
+		&:before {
+			.fa-icon();
+			content:@fa-var-map-marker;
+		}
+		li {
+			.font(30,bold);
+			&:before {
+				content:"|";
+			}
+			a {
+				display: inline-block;
+				padding: 0 15px;
+			}
+		}
+	}
+}
