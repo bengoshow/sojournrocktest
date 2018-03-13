@@ -32,12 +32,19 @@
 
 	<!-- Included CSS Files -->
     <link rel="stylesheet" href="<%# ResolveRockUrl("~~/Styles/bootstrap.css", true) %>"/>
-	<link rel="stylesheet" href="<%# ResolveRockUrl("~~/Styles/theme.css", true) %>"/>
-	<link rel="stylesheet" href="<%# ResolveRockUrl("~/Styles/developer.css", true) %>"/>
+		<link rel="stylesheet" href="<%# ResolveRockUrl("~~/Styles/theme.css", true) %>"/>
+		<link rel="stylesheet" href="<%# ResolveRockUrl("~/Styles/developer.css", true) %>"/>
+		<link rel="stylesheet" href="https://use.typekit.net/cbf6wtt.css">
+    <link rel="stylesheet" href="/Themes/Sojourn/Styles/animate.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="<%# ResolveRockUrl("~/Scripts/modernizr.js" ) %>" ></script>
+    <script type="text/javascript" src="/Themes/Sojourn/Scripts/wow.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <script src="<%# ResolveRockUrl("~~/Scripts/scripts.js" ) %>" ></script>
 
 </head>
 <body runat="server" id="body">
@@ -72,18 +79,27 @@
 
         <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
 
-	    <footer>
-            <div class="container">
-		    
-                <hr />
-
-                <div class="row">
-			        <div class="col-md-12">
-				        <Rock:Zone Name="Footer" runat="server" />
-			        </div>
+	    <div id="subfooter">
+        <div class="container">
+          <div class="row">
+		        <div class="col-md-12">
+			        <Rock:Zone Name="Sub Footer" runat="server" />
 		        </div>
+	        </div>
+        </div>
+	    </div>
 
-            </div>
+	    <footer>
+        <div class="container">
+          <div class="row">
+		        <div class="col-md-9">
+			        <Rock:Zone Name="Footer" runat="server" />
+			      </div>
+			      <div class="col-md-3">
+			      	<p class="poweredbyfishhook"><a href="http://www.fishhook.us" target="_blank">Powered by Fishhook</a></p>
+		        </div>
+	        </div>
+        </div>
 	    </footer>
         
         <%-- controls for scriptmanager and update panel --%>

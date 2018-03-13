@@ -7,7 +7,11 @@
       {% else -%}
       <div class="item">
         {% endif -%}
-        <a href="{{ LinkedPages.DetailPage }}?Item={{ item.Id }}">{{ item | Attribute:'Image' }}</a>
+        {{ item | Attribute:'Image' }}
+        <div class="carousel-caption">
+			    <h1>{{ item.Title }}</h1>
+			    <p></p>
+			  </div>
       </div>
       {% endfor %}
     </div>

@@ -16,41 +16,23 @@
 
 <asp:Content ID="ctMain" ContentPlaceHolderID="main" runat="server">
     
-	<main class="container">
-        
-        <!-- Start Content Area -->
-        
-        <!-- Ajax Error -->
-        <div class="alert alert-danger ajax-error" style="display:none">
-            <p><strong>Error</strong></p>
-            <span class="ajax-error-message"></span>
-        </div>
+	<main>        
+		        
+    <!-- Ajax Error -->
+    <div class="alert alert-danger ajax-error" style="display:none">
+        <p><strong>Error</strong></p>
+        <span class="ajax-error-message"></span>
+    </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <Rock:Zone Name="Sub Feature" runat="server" />
-            </div>
-        </div>
+    <Rock:Zone Name="Sub Feature" runat="server" />
 
-        <div class="row">
-            <div class="col-md-12">
-                <Rock:Zone Name="Section A" runat="server" />
-            </div>
-        </div>
+    <Rock:Zone Name="Section A" runat="server" />
 
-        <div class="row">
-            <div class="col-md-4">
-                <Rock:Zone Name="Section B" runat="server" />
-            </div>
-            <div class="col-md-4">
-                <Rock:Zone Name="Section C" runat="server" />
-            </div>
-            <div class="col-md-4">
-                <Rock:Zone Name="Section D" runat="server" />
-            </div>
-        </div>
+		<Rock:Zone Name="Section B" runat="server" />
+		
+    <Rock:Zone Name="Section C" runat="server" />
 
-        <!-- End Content Area -->
+    <Rock:Zone Name="Section D" runat="server" />
 
 	</main>
         

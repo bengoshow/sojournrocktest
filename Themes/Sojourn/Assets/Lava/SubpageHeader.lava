@@ -1,0 +1,16 @@
+{% page id:'{{ PageParameter.PageId }}' %}
+	{% for page in pageItems %}
+		{% assign pageHeaderImage = page | Attribute:'HeaderImage','Url' %}
+	{% endfor %}
+{% endpage %}
+
+<div class="headerImage" style="background-image:url({{ pageHeaderImage }});">
+    <div class="titleBlock">
+        <h1>{{ 'Global' | Page:'Title' }}</h1>
+        <ul id="social-media-links" class="list-inline">
+            {% for item in Items %}
+                <li><a href="{{ item | Attribute: 'SocialMediaUrl' }}" target="_blank" class="{{ item | Attribute: 'SocialMediaIconClass' }}">{{ item.Title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

@@ -12,21 +12,37 @@
 		margin-bottom: 1em;
 	}
 }
-.campus-list {
+#billboard-footer {
 	background: @white;
 	text-align: center;
 	transform: translateY(-100%);
 	padding: 20px;
-	ul {
+	@media (min-width: @screen-xl-min) {
+		padding: 40px;
+	}
+	position: absolute;
+	top:0;
+	left:15px;
+	right:15px;
+	ul.campus-list {
 		margin:0;
-		&:before {
-			.fa-icon();
-			content:@fa-var-map-marker;
-		}
+		padding:0;
+		list-style-type: none;
+		.fa-icon();
 		li {
-			.font(30,bold);
+			display: inline-block;
+			.font(20,bold);
+			span { display:none; }
 			&:before {
 				content:"|";
+			}
+			&:first-child {
+				&:before {
+					content:"";
+				}
+				span {
+					display: inline;
+				}
 			}
 			a {
 				display: inline-block;

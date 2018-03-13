@@ -22,9 +22,37 @@
 // 1. HTML Overrides
 // -------------------------
 
+// XL screen / wide desktop
+@screen-xl:                  1700px;
+@screen-xl-min:              @screen-xl;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+@screen-lg-max:              (@screen-xl-min - 1);
+
+@media (min-width: @screen-xl) {
+	.container {
+	    width: 1640px;
+	}
+}
 html {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    font-size: 5px;
+		@media (min-width: @screen-sm-min) {
+			font-size: 7px;
+		}
+		@media (min-width: @screen-md-min) {
+			font-size: 8px;
+		}
+		@media (min-width: @screen-lg-min) {
+			font-size: 10px;
+		}
+		@media (min-width: @screen-xl-min) {
+			font-size: 15px;
+		}
 }
 
 main {
@@ -53,25 +81,9 @@ a:hover i.fs {
 // 3. Theme Styling
 // -------------------------
 
-.page-icon {
-    display: none;
-}
-
-header {
-    .page-menu,
-    .login-status {
-        float: right;
-    }
-
-    .navbar {
-        //background-color: @header-bg;
-        border: 0;
-    }
-}
-
 // homepage items
 #announcement-rotator {
-    margin: 0 -@grid-gutter-width/2 @spacing-lg-px;
+    margin: 0;
 
     .item {
         img {
@@ -80,36 +92,7 @@ header {
     }
 }
 
-.announcement-list {
-    .announcement {
-        margin: 0 auto @spacing-lg-px;
-        max-width: 390px;
-    }
-
-    .announcement-title {
-        margin: @spacing-sm-px 0;
-    }
-
-    img {
-        width: 100%;
-    }
-}
-
-.announcement-detail {
-    img {
-        width: 100%;
-    }
-}
-
-.nav-sub {
-    li {
-        border: 1px solid @gray-lighter;
-        border-radius: @border-radius-base;
-    }
-}
-
 footer {
-    margin-bottom: 50px;
 
     .footer-message {
         float: left;
@@ -171,9 +154,7 @@ footer {
 
 // Small devices (tablets, 768px and up)
 @media (min-width: @screen-sm-min) {
-    #announcement-rotator {
-        margin: @spacing-lg-px 0;
-    }
+
 }
 
 // Medium devices (desktops, 992px and up)

@@ -1,10 +1,80 @@
+#subfooter {
+	background-color: #AFAFAF;
+	color: @white;
+	.font(16);
+	padding: 85px 0 70px;
+	h4 {
+		.font(24, bold);
+		line-height: 1em;
+		text-transform: uppercase;
+		margin: 0 0 50px;
+	}
+	#social-media-links {
+		float: right;
+		li {
+			a {
+				display: block;
+				text-indent: -9999em;
+				position: relative;
+				width: 24px;
+				height: 24px;
+				font-size: 24px;
+				color: #fff;
+				&:before {
+					text-indent: 0;
+					position: absolute;
+					top:0;
+					left:50%;
+					transform: translateX(-50%);
+				}
+				&.fa-facebook:hover {
+					color: @facebook;
+				}
+				&.fa-twitter:hover {
+					color: @twitter;
+				}
+				&.fa-instagram:hover {
+					color: @instagram;
+				}
+			}
+		}
+	}
+	.contact-info {
+		margin-top: 20px;
+		@media (min-width: @screen-sm-min) {
+			margin-top: 180px;
+		}
+		p {
+			margin:0;
+		}
+	}
+	.login {
+		text-transform: uppercase;
+		text-align: center;
+		@media (min-width: @screen-sm-min) {
+			text-align: right;
+		}
+		.navbar-nav {
+			float: right;
+			a {
+				background:none;
+				padding:0;
+				font-weight: bold;
+			}
+		}
+	}
+}
 footer {
-  background-color: @brand-secondary;
+	margin:0;
+  background-color: @gray-light;
   color: #fff;
-  font-size: 17px;
+  .font(10);
   padding: 10px;
   @media (min-width: @screen-sm-min) {
-  	padding: 40px 20px;
+  	padding: 25px;
+  }
+  p {
+	  margin:0;
   }
   a, a:hover, a:active, a:focus {
     color: #fff;
@@ -55,6 +125,13 @@ footer {
       }
     }
   }
+  .poweredbyfishhook {
+	  margin:0;
+	  text-align: center;
+	  @media (min-width: @screen-sm-min) {
+	  	text-align: right;
+	  }
+  }
 }
 .social-media-links {
   display: inline-block;
@@ -77,6 +154,7 @@ footer {
       line-height: 26px;
       height: 26px;
       width: 26px;
+      font-size: 26px;
       &:before {
         font-family: "FontAwesome";
         text-indent:0;
