@@ -32,13 +32,17 @@ namespace RockWeb.Blocks.CheckIn
     [DisplayName( "Family Select" )]
     [Category( "Check-in" )]
     [Description( "Displays a list of families to select for checkin." )]
+
+    [TextField( "Title", "Title to display.", false, "Families", "Text", 5 )]
+    [TextField( "Caption", "", false, "Select Your Family", "Text", 6 )]
+    [TextField( "No Option Message", "", false, "Sorry, no one in your family is eligible to check-in at this location.", "Text", 7 )]
+
     public partial class FamilySelect : CheckInBlock
     {
         protected override void OnLoad( EventArgs e )
         {
             base.OnLoad( e );
 
-            RockPage.AddScriptLink( "~/Scripts/iscroll.js" );
             RockPage.AddScriptLink( "~/Scripts/CheckinClient/checkin-core.js" );
 
             var bodyTag = this.Page.Master.FindControl( "bodyTag" ) as HtmlGenericControl;
@@ -75,6 +79,9 @@ namespace RockWeb.Blocks.CheckIn
                     }
                     else
                     {
+                        lTitle.Text = GetAttributeValue( "Title" );
+                        lCaption.Text = GetAttributeValue( "Caption" );
+
                         rSelection.DataSource = CurrentCheckInState.CheckIn.Families
                             .OrderBy( f => f.Caption )
                             .ThenBy( f => f.SubCaption )
@@ -155,7 +162,7 @@ namespace RockWeb.Blocks.CheckIn
                     CurrentCheckInState.CheckIn.Families.All( f => f.People.Count == 0 ) && 
                     CurrentCheckInState.CheckIn.Families.All( f => f.Action == CheckinAction.CheckIn )
                 ),
-                "<p>Sorry, no one in your family is eligible to check-in at this location.</p>" ) )            
+                string.Format( "<p>{0}</p>", GetAttributeValue( "NoOptionMessage" ) ) ) )            
             {
                 ClearSelection();
             }

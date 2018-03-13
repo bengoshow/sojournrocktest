@@ -34,15 +34,17 @@ namespace RockWeb.Blocks.CheckIn
 
     [LinkedPage( "Next Page (Family Check-in)", "", false, "", "", 5, "FamilyNextPage" )]
     [LinkedPage( "Check Out Page", "", false, "", "", 6, "CheckOutPage" )]
+
+    [TextField( "Title", "Title to display. Use {0} for family name", false, "{0}", "Text", 7 )]
+    [TextField( "Caption", "", false, "Select Action", "Text", 8 )]
+
     public partial class ActionSelect : CheckInBlock
     {
         protected override void OnLoad( EventArgs e )
         {
             base.OnLoad( e );
 
-            RockPage.AddScriptLink( "~/Scripts/iscroll.js" );
             RockPage.AddScriptLink( "~/Scripts/CheckinClient/checkin-core.js" );
-
 
             var bodyTag = this.Page.Master.FindControl( "bodyTag" ) as HtmlGenericControl;
             if ( bodyTag != null )
@@ -78,7 +80,10 @@ namespace RockWeb.Blocks.CheckIn
                             }
                             else
                             {
-                                lFamilyName.Text = family.ToString();
+
+                                lTitle.Text = string.Format( GetAttributeValue( "Title" ), family.ToString() );
+                                lCaption.Text = GetAttributeValue( "Caption" );
+
                                 lbCheckIn.Visible = family.People.Count > 0;
                             }
                         }
