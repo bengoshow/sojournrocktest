@@ -10560,6 +10560,65 @@ header.opaque nav {
     font-size: 55px;
   }
 }
+.accordion.panel-group .panel {
+  border: none;
+  background: none;
+}
+.accordion.panel-group .panel-heading {
+  background: none;
+  border: none;
+}
+.accordion.panel-group .panel-title a {
+  display: block;
+  position: relative;
+}
+.accordion.panel-group .panel-title a:after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  font-family: "Font Awesome 5";
+  font-weight: 900;
+  content: "\f067";
+}
+.block-grid.events-grid > .block-grid-item,
+.block-grid.events-grid > li {
+  width: 50%;
+}
+.block-grid.events-grid > .block-grid-item:nth-of-type(n),
+.block-grid.events-grid > li:nth-of-type(n) {
+  clear: none;
+}
+.block-grid.events-grid > .block-grid-item:nth-of-type(2n+1),
+.block-grid.events-grid > li:nth-of-type(2n+1) {
+  clear: both;
+}
+.events-grid a {
+  position: relative;
+  display: block;
+  background-size: cover;
+  background-position: center center;
+}
+.events-grid a:after {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 66.32911392%;
+}
+.events-grid a > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.events-grid a span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
 #subfooter {
   background-color: #AFAFAF;
   color: #ffffff;
