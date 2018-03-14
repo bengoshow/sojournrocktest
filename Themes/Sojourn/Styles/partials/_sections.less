@@ -288,3 +288,30 @@
     padding: 120px 0;
   }
 }
+// Collapsible panels (aka, accordion)
+//
+// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// the help of our collapse JavaScript plugin.
+
+.accordion.panel-group {
+  .panel {
+		border:none;
+		background:none;
+  }
+  .panel-heading {
+	  background:none;
+	  border:none;
+  }
+  .panel-title a {
+	  display: block;
+	  position: relative;
+	  &:after {
+		  position: absolute;
+		  .vc();
+		  right:0;
+      font-family: @fa-font-face;
+      font-weight: @fa-theme-weight;
+		  content: @fa-var-plus;
+	  }
+  }
+}

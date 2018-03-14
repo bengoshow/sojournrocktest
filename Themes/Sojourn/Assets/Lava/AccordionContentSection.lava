@@ -1,15 +1,26 @@
+{% assign FirstItem = Items | First %}
+{% assign ContentGroupTitle = FirstItem.ContentChannel.Name %}
+{% assign ContentGroupId = FirstItem.ContentChannel.Name | ToCssClass %}
+{% assign showTitle = FirstItem.ContentChannel | Attribute:'ShowTitle' %}
 <div class="section light">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-				<div class="accordion">
-					{% for item in Items %}
-					    <h3>{{ item.Title }}</h3>
-					    <div>{{ item.Content }}</div>
-					{% endfor %}
+      <div class="col-md-8 col-md-offset-2">			
+				{% if showTitle %}<h2 class="content-group-title text-center">{{ ContentGroupTitle }}</h2>{% endif %}
+				<div id="{{ContentGroupId}}" class="panel-group accordion">
+				  {% for item in Items %}
+						{% assign ContentItemId = item.Title | ToCssClass %}
+				    <div class="panel panel-default">
+				        <div class="panel-heading">
+				            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#{{ContentGroupId}}" href="#{{ContentItemId}}">{{ item.Title }}</a></h4>
+				        </div>
+								<div id="{{ContentItemId}}" class="panel-collapse collapse">
+				            <div class="panel-body">{{ item.Content }}</div>
+								</div>
+						</div>
+				{% endfor %}
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-{{ 'Lava' | Debug }}
