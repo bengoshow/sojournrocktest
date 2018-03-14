@@ -1,0 +1,15 @@
+<div class="section light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+				<div class="accordion">
+					{% for item in Items %}
+					    <h3>{{ item.Title }}</h3>
+					    <div>{{ item.Content }}</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{ 'Lava' | Debug }}

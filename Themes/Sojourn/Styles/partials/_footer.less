@@ -1,0 +1,197 @@
+#subfooter {
+	background-color: #AFAFAF;
+	color: @white;
+	.font(16);
+	padding: 85px 0 70px;
+	h4 {
+		.font(24, bold);
+		line-height: 1em;
+		text-transform: uppercase;
+		margin: 0 0 50px;
+	}
+	#social-media-links {
+		float: right;
+		li {
+			a {
+				display: block;
+				text-indent: -9999em;
+				position: relative;
+				width: 24px;
+				height: 24px;
+				font-size: 24px;
+				color: #fff;
+				&:before {
+					text-indent: 0;
+					position: absolute;
+					top:0;
+					left:50%;
+					transform: translateX(-50%);
+				}
+				&.fa-facebook:hover {
+					color: @facebook;
+				}
+				&.fa-twitter:hover {
+					color: @twitter;
+				}
+				&.fa-instagram:hover {
+					color: @instagram;
+				}
+			}
+		}
+	}
+	.contact-info {
+		margin-top: 20px;
+		@media (min-width: @screen-sm-min) {
+			margin-top: 180px;
+		}
+		p {
+			margin:0;
+		}
+	}
+	.login {
+		text-transform: uppercase;
+		text-align: center;
+		@media (min-width: @screen-sm-min) {
+			text-align: right;
+		}
+		.navbar-nav {
+			float: right;
+			a {
+				background:none;
+				padding:0;
+				font-weight: bold;
+			}
+		}
+	}
+}
+footer {
+	margin:0;
+  background-color: @gray-light;
+  color: #fff;
+  .font(10);
+  padding: 10px;
+  @media (min-width: @screen-sm-min) {
+  	padding: 25px;
+  }
+  p {
+	  margin:0;
+  }
+  a, a:hover, a:active, a:focus {
+    color: #fff;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .btn {
+    border-color: #fff;
+    color: #fff;
+    background: none;
+    &:hover, &:focus {
+      background-color: @white;
+      color: @brand-primary;
+      border-color: #fff;
+      text-decoration: none;
+    }
+  }
+  .footer-quick-links {
+    margin: 30px 0;
+    .btn {
+      margin: 10px;
+      border-color: #fff;
+      color: #fff;
+      &:hover, &:focus {
+        background-color: @white;
+        color: @brand-primary;
+        border-color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+  .contact-info {
+    font-size: 17px;
+  }
+  .service-times {
+    font-size: 17px;
+  }
+  .copyright,
+  .copyright p {
+    font-size: 12px;
+  }
+  .credits {
+    font-size: 12px;
+    a {
+      &:hover {
+        color: @brand-primary;
+      }
+    }
+  }
+  .poweredbyfishhook {
+	  margin:0;
+	  text-align: center;
+	  @media (min-width: @screen-sm-min) {
+	  	text-align: right;
+	  }
+  }
+}
+.social-media-links {
+  display: inline-block;
+  margin:10px 0 20px;
+  @media (min-width: @screen-sm-min) {
+  	margin:0px 0 10px;
+  }
+  padding:0;
+  list-style-type: none;
+  li {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 15px 10px;
+    a {
+      font-family:@font-family-sans-serif;
+      display:block;
+      text-indent: -999em;
+      position: relative;
+      text-decoration: none;
+      line-height: 26px;
+      height: 26px;
+      width: 26px;
+      font-size: 26px;
+      &:before {
+        font-family: "FontAwesome";
+        text-indent:0;
+        position: absolute;
+        top: 0;
+        right:0;
+        height: 26px;
+        width: 26px;
+        text-align: center;
+        font-size: 22px;
+        margin-right: 5px;
+      }
+      &.fa-facebook {
+        &:hover {
+          color: @facebook !important;
+        }
+      }
+      &.fa-twitter {
+        &:hover {
+          color: @twitter !important;
+        }
+      }
+      &.fa-instagram {
+        &:hover {
+          color: @instagram !important;
+        }
+      }
+      &.fa-youtube {
+        &:hover {
+          color: @youtube !important;
+        }
+      }
+      &.fa-vimeo {
+        &:hover {
+          color: @vimeo !important;
+        }
+      }
+    }
+  }
+}

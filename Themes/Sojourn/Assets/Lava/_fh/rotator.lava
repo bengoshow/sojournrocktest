@@ -1,0 +1,26 @@
+﻿<div id="rotator" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    {% for item in Items %}
+    {% if forloop.index0 == 0 -%}
+    <div class="item active">
+      {% else -%}
+      <div class="item">
+        {% endif -%}
+        <a href="{{ LinkedPages.DetailPage }}?Item={{ item.Id }}">{{ item | Attribute:'Image' }}</a>
+      </div>
+      {% endfor %}
+    </div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+  {% for item in Items %}
+  	{% if forloop.index0 == 0 -%}
+      <li data-target="#rotator" data-slide-to="{{forloop.index0}}" class="active"></li>
+    {% else -%}
+      <li data-target="#rotator" data-slide-to="{{forloop.index0}}" class=""></li>
+    {% endif -%}
+  {% endfor %}
+  </ol>
+  
+</div>

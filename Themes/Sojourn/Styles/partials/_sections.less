@@ -1,0 +1,290 @@
+.section {
+  background-color: #f7f7f7; 
+  padding: 50px 10px 20px;
+  @media (min-width: @screen-md-min) {
+  	padding: 90px 0;
+  }
+  h2, h3 {
+    color: @brand-primary;
+  }
+  h4, h5, h6 {
+    color: @brand-secondary;
+  }
+  p, li {
+		.font(18.66);
+    line-height: 1.6em;
+  }
+  p {
+    margin-bottom: 1.6em;
+  }
+  blockquote {
+    p {
+      .font(25,bold);
+      color: @brand-secondary;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    &.pullquote {
+      p {
+        .font(25,normal,italic);
+        color: @brand-primary;
+      }
+    }
+  }
+  .page-title {
+    margin-top:0;
+  }
+  .section-title {
+    text-transform: uppercase;
+    font-size: 10vw;
+    color: @text-color;
+    @media (min-width: @screen-sm-min) {
+    	font-size: 55px;
+    }
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    +.section-subtitle {
+      margin-top: 30px;
+    }
+    +* {
+      margin-top: 30px;
+    }
+  }
+  .section-subtitle {
+    text-transform: uppercase;
+    font-size: 29px;
+    letter-spacing: 3px;
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    +.section-title {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+  &.carousel,
+  &.nopad {
+    padding:0;
+  }
+  &.light {
+	  background-color: #fff;
+  }
+  &.dark {
+    background-color: @brand-secondary;
+    color: #fff;
+    a {
+      color: #fff;
+    }
+    .sermon-title,
+    .section-title {
+      color: #fff;
+    }
+    .btn, .button {
+      color: @white;
+      border-color: @white;
+      &:hover, &:active, &:focus {
+        background-color: @white;
+        color: @brand-primary;
+      }
+    }    
+  }
+  &.overlay {
+    background-color: @gray;
+    background-blend-mode: multiply;	  
+  }
+  &.hasbg {
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    padding: 60px 20px 50px;
+    @media (min-width: @screen-sm-min) {
+    	padding: 90px 0;
+    }
+    .section-title {
+      color: @white;
+    }
+    .btn, .button {
+      color: @white;
+      border-color: @white;
+      &:hover, &:active, &:focus {
+        background-color: @white;
+        color: @brand-primary;
+      }
+    }    
+  }
+  .content-block {
+	  &.image-right {
+		  .image-block {
+				@media (min-width: @screen-sm-min) {
+			  	width: 50%;
+					float: right;
+				}
+		  }
+		  .row {
+			  position: relative;
+			  .col-md-6 {
+					@media (min-width: @screen-sm-min) {
+					  position: absolute;
+						.vc()
+					}
+			  }
+			}
+	  }
+  }
+}
+#latest-sermon {
+	@media (min-width: @screen-sm-min) {
+		min-height: 39vw;
+	}
+}
+#series-footer {
+	background: @white;
+	transform: translateY(-50%);
+	position: absolute;
+	top:0;
+	left:15px;
+	right:15px;
+	z-index: 10;
+	padding: 20px;
+	@media (min-width: @screen-xl-min) {
+		padding: 40px;
+	}
+}
+#tier-2-links {
+  .linkbox {
+    text-align: center;
+    margin-bottom: 30px;
+    .tier2-item {
+	    .aspect-ratio(700,464);
+      display: block;
+      //background-color: @gray;
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center center;
+      transition: background-color 300ms ease-in-out;
+      &:hover, &:active, &:focus {
+        background-color: @gray-light;
+      }
+      .block-title {
+	      padding: 20px;
+	      .font(45, bold);
+	      @media (min-width: @screen-sm-min) {
+	      	.font(35, bold);
+	      }
+	      @media (min-width: @screen-md-min) {
+	      	.font(55, bold);
+	      }
+	      color: #fff;
+	      text-transform: uppercase;
+	      .vc();
+	      position: absolute;
+	      left:0;
+	      width: 100%;
+	      z-index: 10;
+	    }
+	    .select-overlay {
+		    visibility: hidden;
+        background-color: fade(@gray-light,0.8);
+				background-blend-mode: multiply;
+	      position: absolute;
+	      left:0;
+	      top:0;
+	      bottom:0;
+	      width: 100%;
+	      z-index: 20;
+				.font(10);
+				text-transform: uppercase;
+	      @media (min-width: @screen-sm-min) {
+	      	.font(20);
+	      }
+				select {
+					width: 57.25%;
+				}
+				select,
+				.select2 {
+		      .vc();
+					margin: 0 auto;
+				}
+	    }
+    }
+  }
+}
+#zone-main {
+  padding: 90px 0;
+	.zone-content {
+		.container-fixed();
+	  @media (min-width: @screen-sm-min) {
+	    width: @container-sm;
+	  }
+	  @media (min-width: @screen-md-min) {
+	    width: @container-md;
+	  }
+	  @media (min-width: @screen-lg-min) {
+	    width: @container-lg;
+	  }
+		.html-content {
+			.make-row();
+			.clearfix();
+			.block-content {
+				.make-lg-column(12);
+				.clearfix();
+		    .font(18.66);
+		    line-height: 1.6em;
+			}
+		}
+	}
+}
+.upcoming-events {
+  padding: 90px 0;
+	.event-item {
+		//height: 350px;
+	  .event-details {
+	    padding: 20px;
+	    //margin-top: 50%;
+	    //transform:translateY(-50%);
+	    .btn {
+	      display: block;
+	      margin-bottom: 5px;
+	      @media (min-width: @screen-md-min) {
+	      	display: inline-block;
+	        margin-bottom: 0;
+	      }      
+	    }
+	    .event-date {
+	      .font(24);
+	      margin-bottom: 0;
+	      text-transform: uppercase;
+	    }
+	    .event-title {
+	      .font(30, bold);
+	      color: @text-color;
+	      margin: 10px 0 15px;
+	      /*@media (min-width: @screen-sm-min) {
+	      	.font(30, bold);
+	      }
+	      @media (min-width: @screen-md-min) {
+	      	.font(50, bold);
+	      }*/
+	      text-transform: uppercase;
+	    }
+	  }
+	}
+}
+.separator {
+//    min-height: 360px;
+    background-position: center center;
+    background-size: cover;
+//    background-attachment: fixed;
+  .section-title {
+    text-transform: uppercase;
+    font-size: 10vw;
+    color: @white;
+    @media (min-width: @screen-sm-min) {
+    	font-size: 55px;
+    }
+    line-height: 1em;
+    padding: 120px 0;
+  }
+}

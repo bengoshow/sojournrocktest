@@ -1,0 +1,49 @@
+<div id="menu">
+  <div class="topbar">
+    <div class="menu-buttons">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-right">
+            <a class="menu-closer" href="#"><i class="fa fa-close" aria-hidden="true"></i></a>
+            <a class="search-opener" href="#"><i class="fa fa-search fa-flip-horizontal" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <navigation>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+					{% if Page.DisplayChildPages == 'true' and Page.Pages != empty %}
+				    <ul id="nav" class="block-grid block-grid-xs-1 block-grid-sm-3 block-grid-md-5">
+					{% for childPage in Page.Pages %}
+		  	      <li{% if childPage.Current == 'true' %} class="active"{% endif%}>
+								<a href="{{ childPage.Url }}">{{ childPage.Title }}</a>
+								{% if childPage.DisplayChildPages == 'true' and childPage.Pages != empty %}
+							    <ul>
+								{% for childPage2 in childPage.Pages %}
+					  	      <li{% if childPage2.Current == 'true' %} class="active"{% endif%}>
+											<a href="{{ childPage2.Url }}">{{ childPage2.Title }}</a>
+						        </li>
+						    {% endfor %}
+								</ul>
+							{% endif %}
+			        </li>
+			    {% endfor %}
+						</ul>
+					{% endif %}
+        </div><!-- /.col-md-10 -->
+      </div><!-- /.row -->
+    </div>
+  </navigation>
+  <div class="bottombar">
+    <div class="container">
+      <div class="row bottom">
+        <div class="col-md-12 text-center">
+<?php //include($themeRoot."/_inc/follow.php"); ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

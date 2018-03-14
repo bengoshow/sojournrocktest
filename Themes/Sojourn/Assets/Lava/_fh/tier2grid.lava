@@ -1,0 +1,13 @@
+﻿<div class="container-fluid">
+	<div class="row no-gutter">
+	  {% for item in Items %}
+			<div class="col-sm-4">
+				<div class="linkbox">
+					<a href="{{ LinkedPages.DetailPage }}?Item={{ item.Id }}" style="background-image:url({{ item | Attribute:'Image','Url' }})">
+						<span>{{ item.Title }}</span>
+					</a>
+				</div>
+		  </div>
+	  {% endfor -%}
+	</div>
+</div>
