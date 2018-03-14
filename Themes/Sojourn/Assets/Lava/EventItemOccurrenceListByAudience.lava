@@ -1,20 +1,25 @@
-<div class="module">
+<div class="section light">
   <header class="clearfix">
-    <h1>Upcoming Events</h1>
+    <h2 class="text-center">Upcoming Events</h1>
   </header>
-
-  <ul class="list-unstyled">
-    {% for occurrence in EventItemOccurrences %}
-    <li>
-      {% if occurrence.EventItem.DetailsUrl != '' %}
-      <a href="{{ occurrence.EventItem.DetailsUrl }}">
-        {% else %}
-        <a href="{{ EventDetailPage }}?EventOccurrenceId={{ occurrence.Id }}">
-          {% endif %}
-          {{ occurrence.EventItem.Name }} <small>({{ occurrence.Schedule.iCalendarContent | DatesFromICal | First | Date: 'M/d ' }})</small>
-        </a>
-
-      </li>
-    {% endfor %}
-  </ul>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			  <ul class="block-grid events-grid">
+			    {% for occurrence in EventItemOccurrences %}
+			    <li>
+			      {% if occurrence.EventItem.DetailsUrl != '' %}
+			      	<a href="{{ occurrence.EventItem.DetailsUrl }}" style="background-image: url('{{ occurrence.EventItem.Photo.Url }}')">
+			      {% else %}
+			        <a href="{{ EventDetailPage }}?EventOccurrenceId={{ occurrence.Id }}" style="background-image: url('{{ occurrence.EventItem.Photo.Url }}')">
+			      {% endif %}
+			          <span>{{ occurrence.EventItem.Name }} <small>({{ occurrence.Schedule.iCalendarContent | DatesFromICal | First | Date: 'M/d ' }})</small></span>
+			        </a>
+			      </li>
+			    {% endfor %}
+			  </ul>
+			</div>
+		</div>
+	</div>
 </div>
+{{ "Lava" | Debug }}
