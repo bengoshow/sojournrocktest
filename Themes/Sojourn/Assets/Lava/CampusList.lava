@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="billboard-footer">
+                <ul class="campus-list">
+{% campus where:'IsActive == true' sort:'Order asc' %}
+    {% for campus in campusItems %}
+                    <li><span class="fa fa-map-marker-alt"></span><a href="{{campus.Url}}">{{ campus.Name }}</a></li>
+    {% endfor %}
+{% endcampus %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
