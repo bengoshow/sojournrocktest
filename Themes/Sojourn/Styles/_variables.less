@@ -34,7 +34,7 @@
 @text-muted:             @gray-light; // The muted color for text #color #color
 @text-selection-bg:      #afd074; // Text selection background color (used when people select text with the mouse). #color
 @text-selection-color:   #fff;    // Text selection text color (used when people select text with the mouse). #color
-@font-family-sans-serif: 'OpenSans', 'Helvetica Neue', Helvetica, Arial, sans-serif; // The base font to use for text. Be sure when defining this font that the various weights are configured.
+@font-family-sans-serif: 'proxima-nova','OpenSans', 'Helvetica Neue', Helvetica, Arial, sans-serif; // The base font to use for text. Be sure when defining this font that the various weights are configured.
 @font-size-base:          14px; // The default text size.
 @line-height-base:        1.428571429; // The default line height.
 //--
@@ -102,7 +102,7 @@
 @adminbar-text-color: @theme-2-text;
 
 // Global Styles 
-@border-radius-base: 4px;       // The global setting for rounding corners.
+@border-radius-base: 0;       // The global setting for rounding corners.
 
 @photo-border: @theme-3;   // Standard border color for photos.
 @hr-border: lighten(@text-color, 40%);      // The color horizontal rule lines.
@@ -115,8 +115,8 @@
 @scroll-thumb-color: #ccc; // Color of the scrollbar thumb which moves up and down the track line.
 
 //// Scroll Bars
-@spinner-bg: @btn-primary-bg;       // The background color of the wait spinner.
-@spinner-color: @btn-primary-color; // The bar color of the wait spinner.
+@spinner-bg: @btn-primary-color;       // The background color of the wait spinner.
+@spinner-color: #fff; // The bar color of the wait spinner.
 
 
 // Control Variables
@@ -331,15 +331,15 @@
 @tree-selected-color: #fff;      // Text color of selected items in the treeview.
 
 // Buttons
-@btn-font-weight:                normal;
+@btn-font-weight:                bold;
 //--
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             darken(@body-bg, 20%);
+@btn-default-color:              #fff;
+@btn-default-bg:                 transparent;
+@btn-default-border:             #fff;
 //--
-@btn-primary-color:              #fff;
-@btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
+@btn-primary-color:              @brand-primary;
+@btn-primary-bg:                 transparent;
+@btn-primary-border:             @brand-primary;
 //--
 @btn-success-color:              #fff;
 @btn-success-bg:                 @brand-success;

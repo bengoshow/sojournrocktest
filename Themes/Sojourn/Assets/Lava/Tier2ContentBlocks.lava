@@ -1,0 +1,32 @@
+﻿<div id="tier-2-links" class="section">
+  <div class="container">
+    <div class="row">
+      {% for item in Items %}
+      {% assign currentItemImageGuid = item | Attribute:'ContentImageSectionImage','RawValue' %}
+      <div class="col-sm-6">
+        <div class="linkbox">
+            {% assign campusList = item | Attribute: 'ContentImageSectionCampus' %}
+            {% assign currentItemCampusContext = item | Attribute: 'ContentImageSectionCampus' | Split:',' %}
+            {% if campusList != empty %}
+                <div class="tier2-item" style="background-image: url('/GetImage.ashx?Guid={{ currentItemImageGuid }}')">
+                <div class="select-overlay">
+                    <select class="select-church" data-placeholder="Select A Church">
+                        <option></option>
+                    {% for church in currentItemCampusContext %}
+                        <option value="{{ item | Attribute: 'ContentImageSectionURL' }}?church={{church | ToCssClass}}">{{church}}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <span class="block-title">{{ item.Title }}</span>
+                </div>
+            {% else %}
+                <a class="tier2-item" href="{{ item | Attribute: 'ContentImageSectionURL' }}" style="background-image: url('/GetImage.ashx?Guid={{ currentItemImageGuid }}')">
+                    <span class="block-title">{{ item.Title }}</span>
+                </a>
+            {%endif%}
+        </div>
+      </div>
+      {% endfor -%}
+    </div>
+  </div>
+</div>

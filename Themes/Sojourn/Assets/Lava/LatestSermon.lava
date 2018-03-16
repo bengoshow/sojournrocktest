@@ -1,0 +1,30 @@
+﻿{% for item in Items %}
+{% assign currentSeriesImageGuid = item.ParentItems[0].ContentChannelItem | Attribute:'SeriesImage','RawValue' %}
+
+<div id="latest-sermon" class="section hasbg" style="background-image: url('/GetImage.ashx?Guid={{ currentSeriesImageGuid }}')">
+{% comment %}
+    <div class="sermon-info text-center">
+        <h2>{{ item.Title }}</h2>
+        <p><strong>{{ item | Attribute:'Speaker' }}</strong></p>
+        <p>{{ item.StartDateTime | Date:'M/d/yyyy' }}</p>
+    </div>
+{% endcomment %}
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="series-footer">
+                <select class="campus-list sorter listen" data-placeholder="Listen Now">
+                    <option></option>
+{% campus where:'IsActive == true' sort:'Order asc' %}
+    {% for campus in campusItems %}
+                    <option value="{{campus.Url}}">{{ campus.Name }}</option>
+    {% endfor %}
+{% endcampus %}
+                </select>
+                <a href="/sermons" class="btn btn-default pull-right">Sermon Archive</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

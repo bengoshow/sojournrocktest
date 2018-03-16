@@ -44,7 +44,7 @@ jQuery(function($){
 	var delta = 5;
 	var navbarHeight = $('header').outerHeight();
 	
-	$(window).scroll(function(event){
+	$(window).scroll(function(){
 	    didScroll = true;
 	});
 	
@@ -72,14 +72,26 @@ jQuery(function($){
 	    
 	    lastScrollTop = st;
 	}
-		
+	$('#main-menu a').on('click', function(){
+		if ($('#churches-mega-menu').hasClass('open')) {
+			$('#churches-mega-menu').hide().removeClass('open');	
+		}
+	});
+	$('#menu_churches a').on('click', function(e){
+		e.preventDefault();
+		if ($(this).parent().hasClass('open')) {
+			$('#churches-mega-menu').hide().removeClass('open');	
+		} else {
+			$('#churches-mega-menu').show().addClass('open');
+		}
+	});
   $('select.sorter, select.filter').select2({
       //allowClear: true,
       minimumResultsForSearch: 20
   });
   $('select.select-church').select2({
       //allowClear: true,
-      minimumResultsForSearch: 20,
+      minimumResultsForSearch: 20
   });
   $('.tier2-item').each(function(){
 	  $(this).hover(function(){
