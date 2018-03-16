@@ -12,7 +12,7 @@
         {% comment %}
         <ul id="social-media-links" class="list-inline">
             {% for item in Items %}
-                <li><a href="{{ item | Attribute: 'SocialMediaUrl' }}" target="_blank" class="{{ item | Attribute: 'SocialMediaIconClass' }}">{{ item.Title }}</a></li>
+                <li><a href="{{ item | Attribute: 'SocialMediaUrl','RawValue' }}" target="_blank" class="{{ item | Attribute: 'SocialMediaIconClass' }}">{{ item.Title }}</a></li>
             {% endfor %}
         </ul>
         {% endcomment %}
