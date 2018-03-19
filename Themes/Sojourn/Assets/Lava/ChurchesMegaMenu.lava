@@ -1,0 +1,20 @@
+<div id="churches-mega-menu" class="dropdown-menu">
+    <div class="container">
+        <div class="row">
+            <div class="md-col-12">
+                {% for campus in Campuses %}
+                {% assign isActive = campus.IsActive %}
+                {% assign serviceDay = "" %}
+                {% if isActive %}
+                <div class="campus">
+                    <h2>{{ campus.Name }}</h2>
+                    <h3>{% for serviceTime in campus.ServiceTimes %}{% if serviceTime.Day != serviceDay %}{{ serviceTime.Day | Pluralize }} at {% assign serviceDay = serviceTime.Day %}{% endif %}{% if forloop.length > 1 %}{% if forloop.last %} and {% elseif forloop.first != true %}, {% endif %}{% endif %}{{ serviceTime.Time }}{% endfor %}</h3>
+                    <p><em>{{ campus.Address }}</em></p>
+                    <p><a href="{{ campus.Url }}" class="btn btn-default">More</a></p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
