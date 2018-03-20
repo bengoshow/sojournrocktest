@@ -9602,6 +9602,58 @@ div.aspNetDisabled {
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
+body.noheader {
+  padding-top: 105px;
+}
+@media (min-width: 768px) {
+  body.noheader {
+    padding-top: 110px;
+  }
+}
+@media (min-width: 1700px) {
+  body.noheader {
+    padding-top: 125px;
+  }
+}
+body.noheader .navbar {
+  background-color: white;
+}
+body.noheader .navbar .logo {
+  color: #333333;
+}
+body.noheader .navbar .logo:hover {
+  color: #555555;
+}
+body.noheader .navbar .navbar-nav li a {
+  color: #333333;
+}
+body.noheader .navbar .navbar-nav li a:hover {
+  color: #428bca;
+}
+body.noheader .navbar .navbar-nav li:hover a {
+  background-color: #428bca;
+  color: #ffffff;
+}
+body.noheader .navbar .search-opener {
+  color: #333333;
+}
+body.noheader .navbar .search-opener:hover {
+  color: #428bca;
+}
+body.noheader .navbar .menu-opener {
+  color: #333333;
+}
+@media (max-width: 767px) {
+  body.noheader .navbar .menu-opener.affix {
+    position: fixed;
+  }
+  body.noheader .navbar .menu-opener.affix i {
+    background-color: rgba(119, 119, 119, 0.5);
+  }
+}
+body.noheader .navbar .menu-opener:hover {
+  color: #428bca;
+}
 .navbar {
   margin: 0;
   background: none;
@@ -9613,43 +9665,43 @@ div.aspNetDisabled {
     padding: 20px 0;
   }
 }
-.navbar .logo {
-  margin: 0;
+.navbar .navbar-brand.logo {
+  margin-left: 0 !important;
   font-size: 22px;
   font-size: 2.2rem;
   font-weight: bold;
   font-style: normal;
   line-height: 1.2em;
   color: #fff;
-  text-transform: uppercase;
+  height: auto;
   padding: 20px 10px 10px;
   display: block;
 }
 @media (min-width: 768px) {
-  .navbar .logo {
+  .navbar .navbar-brand.logo {
     float: left;
     display: inline;
-    padding: 21px 0;
+    padding: 20px 0;
     width: auto;
   }
 }
 @media (min-width: 992px) {
-  .navbar .logo {
+  .navbar .navbar-brand.logo {
     font-size: 25px;
     font-size: 2.5rem;
     font-weight: bold;
     font-style: normal;
   }
 }
-.navbar .logo:hover {
+.navbar .navbar-brand.logo:hover {
   color: #555555;
 }
-.navbar .logo i {
-  font-size: 40px;
+.navbar .navbar-brand.logo i {
+  font-size: 85px;
   float: left;
   margin-right: 10px;
 }
-.navbar .logo img {
+.navbar .navbar-brand.logo img {
   height: auto;
   width: 100%;
 }
@@ -9664,7 +9716,7 @@ div.aspNetDisabled {
 }
 .navbar .navbar-nav li a {
   color: #fff;
-  line-height: 40px;
+  line-height: 85px;
   padding: 25px;
   line-height: 1;
   display: inline-block;
@@ -9825,6 +9877,36 @@ header.opaque .navbar .menu-opener {
 }
 header.opaque .navbar .menu-opener:hover {
   color: #428bca;
+}
+.page-title-container {
+  background-color: #555555;
+}
+.page-title-container .page-title {
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: normal;
+  color: #fff;
+  margin: 20px 0;
+  line-height: 1em;
+}
+@media (min-width: 768px) {
+  .page-title-container .page-title {
+    font-size: 30px;
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: normal;
+    margin: 40px 0;
+  }
+}
+@media (min-width: 1700px) {
+  .page-title-container .page-title {
+    font-size: 42.666px;
+    font-size: 4.2665999999999995rem;
+    font-weight: bold;
+    font-style: normal;
+    margin: 50px 0;
+  }
 }
 #menu-churches ul {
   display: none !important;
@@ -10391,6 +10473,11 @@ header.opaque .navbar .menu-opener:hover {
     width: 1170px;
   }
 }
+@media (min-width: 1700px) {
+  #zone-main .zone-content {
+    width: 1640px;
+  }
+}
 #zone-main .zone-content .html-content {
   padding: 50px 0;
   margin-left: -15px;
@@ -10552,6 +10639,127 @@ header.opaque .navbar .menu-opener:hover {
   transform: translateY(-50%);
   width: 100%;
   text-align: center;
+}
+select.sermon-list {
+  min-width: 200px;
+  max-width: 100%;
+}
+.series-list {
+  padding: 35px 0;
+}
+@media (min-width: 768px) {
+  .series-list {
+    padding: 65px 0;
+  }
+}
+@media (min-width: 1700px) {
+  .series-list {
+    padding: 100px 0;
+  }
+}
+.series-list .series {
+  cursor: pointer;
+}
+.series-list .series .series-image {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+.series-list .series .series-image:after {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 55.56962025%;
+}
+.series-list .series .series-image > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.series-list .series .series-image h2 {
+  display: none;
+}
+.series-list .series-body {
+  display: none;
+  background-color: #555555;
+  color: #ffffff;
+  padding: 20px 0;
+  margin: 25px 0;
+  position: relative;
+}
+.series-list .series-body:before {
+  content: "";
+  border: solid 20px transparent;
+  border-bottom-color: #555555;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  transform: translateY(-100%);
+}
+@media (min-width: 768px) {
+  .series-list .series-body {
+    margin-top: 40px;
+    padding: 41px 0;
+  }
+  .series-list .series-body:before {
+    border-width: 35px;
+  }
+}
+@media (min-width: 1700px) {
+  .series-list .series-body {
+    margin-top: 65px;
+    padding: 62px 0;
+  }
+  .series-list .series-body:before {
+    border-width: 55px;
+  }
+}
+.series-list .series-body:last-child:before {
+  left: 75%;
+}
+.series-list .series-body .sermons-list {
+  margin-top: 25px;
+}
+@media (min-width: 768px) {
+  .series-list .series-body .sermons-list {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 1700px) {
+  .series-list .series-body .sermons-list {
+    margin-top: 75px;
+  }
+}
+.series-list .series-body .sermons-list:first-child {
+  margin-top: 0;
+}
+.series-list .series-body .sermons-list .series-dates {
+  color: #ffffff;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: normal;
+  margin: 0;
+}
+.series-list .series-body .sermons-list li.block-grid-item {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+}
+.series-list .series-body .sermons-list li.block-grid-item a {
+  color: #ffffff;
+}
+.series-list .series-body .sermons-list h3 {
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 42.66px;
+  font-size: 4.266rem;
+  font-weight: bold;
+  font-style: normal;
 }
 #subfooter {
   background-color: #AFAFAF;
