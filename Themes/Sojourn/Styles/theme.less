@@ -25,6 +25,7 @@
 // XL screen / wide desktop
 @screen-xl:                  1700px;
 @screen-xl-min:              @screen-xl;
+@container-xl:							 1640px;
 
 // So media queries don't overlap when required, provide a maximum
 @screen-xs-max:              (@screen-sm-min - 1);
@@ -34,7 +35,7 @@
 
 @media (min-width: @screen-xl) {
 	.container {
-	    width: 1640px;
+	    width: @container-xl;
 	}
 }
 html {

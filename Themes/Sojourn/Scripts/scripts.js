@@ -96,8 +96,18 @@ jQuery(function($){
   $('.tier2-item').each(function(){
 	  $(this).hover(function(){
 		  $(this).find('.select-overlay').css('visibility','visible');
-		}, function(){
-		  $(this).find('.select-overlay').css('visibility','hidden');			
 		});
   });
+	$('select.sermon-list').on('change', function(){
+		var url = $(this).val(); // get selected value
+		if (url) { // require a URL
+		    window.location = url; // redirect
+		}
+		return false;
+	});
+	$('.series-opener').on('click touchstart', function(e){
+		e.preventDefault();
+		var seriesblock = $(this).data('openseries');
+		$("#"+seriesblock).slideDown();
+	});
 });

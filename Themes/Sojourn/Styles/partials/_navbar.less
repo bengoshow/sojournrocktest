@@ -2,28 +2,88 @@
 -------------------------------------------------- */
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
-@navbar-height: 40px;
+@navbar-height: 85px;
+@navbar-padding: 20px;
+@navbar-height-xs: 65px;
+@navbar-height-md: 70px;
+body.noheader {
+	padding-top: @navbar-height-xs + (@navbar-padding * 2);
+	@media (min-width: @screen-sm-min) {
+		padding-top: @navbar-height-md + (@navbar-padding * 2);
+	}
+	@media (min-width: @screen-xl-min) {
+		padding-top: @navbar-height + (@navbar-padding * 2);
+	}
+	.navbar {
+			background-color: white;
+		  .logo {
+		    color: @text-color;
+		    &:hover {
+		      color: @gray;
+		    }
+		  }
+		  .navbar-nav {
+		    li {
+		      a {
+		        color: @text-color;
+		        &:hover {
+		          color: @brand-primary;
+		        }
+		      }
+		      &:hover {
+		        a {
+		          background-color: @brand-primary;
+		          color: @white;
+		        }
+		        ul {
+		        }
+		      }
+		    }
+		  }
+		  .search-opener {
+		    color: @text-color;
+		    &:hover {
+		      color: @brand-primary;
+		    }
+		  }
+		  .menu-opener {
+		    color: @text-color;
+		    &.affix {
+		      @media (max-width: @screen-xs-max) {
+		      	position: fixed;
+		        i {
+		          background-color: fade(@gray-light,50%);  
+		        }
+		      }
+		    }
+		    &:hover {
+		      color: @brand-primary;
+		    }
+		  }
+		}
+}
 .navbar {
   margin: 0;
   background:none;	
   border: none;
   z-index: 500;
   @media (min-width: @screen-sm-min) {
-  	padding: 20px 0;
+  	padding: @navbar-padding 0;
   }
-  .logo {
-	  margin:0;
+  .navbar-brand.logo {
+	  margin-left:0 !important;
     .font(22,bold,normal);
     //width: 245px;
     line-height: 1.2em;
     color: #fff;
-    text-transform: uppercase;
-    padding:20px 10px 10px;
+    //text-transform: uppercase;
+    height: auto;
+    padding:@navbar-padding 10px @navbar-padding/2;
     display: block;
     @media (min-width: @screen-sm-min) {
     	float:left;
     	display: inline;
-      padding: 21px 0;
+      padding: @navbar-padding 0;
       width: auto;
       //max-width: 50%;
     }
@@ -224,6 +284,23 @@ header {
 		      color: @brand-primary;
 		    }
 		  }
+		}
+	}
+}
+.page-title-container {
+	background-color: @gray;
+	.page-title {
+		.font(20, bold);
+		color: #fff;
+		margin: 20px 0;
+		line-height: 1em;
+		@media (min-width: @screen-sm-min) {
+			.font(30, bold);
+			margin: 40px 0;
+		}
+		@media (min-width: @screen-xl-min) {
+			.font(42.666, bold);
+			margin: 50px 0;
 		}
 	}
 }
