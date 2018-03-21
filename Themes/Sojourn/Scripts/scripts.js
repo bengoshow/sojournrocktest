@@ -77,7 +77,7 @@ jQuery(function($){
 			$('#churches-mega-menu').hide().removeClass('open');	
 		}
 	});
-	$('#menu_churches a').on('click', function(e){
+	$('#menu_churches a, #menu_church a').on('click', function(e){
 		e.preventDefault();
 		if ($(this).parent().hasClass('open')) {
 			$('#churches-mega-menu').hide().removeClass('open');	

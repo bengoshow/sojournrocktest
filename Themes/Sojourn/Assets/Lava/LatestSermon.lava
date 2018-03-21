@@ -8,8 +8,8 @@
             <div id="series-footer">
                 <select class="sermon-list sorter listen" data-placeholder="{{ item.Title }} - Listen Now">
                   <option></option>
-                	<optgroup label="Select Sermon">
-										{% for sermon in item.ChildItems %}<option value="{{ LinkedPages.DetailPage }}?Id={{sermon.Id}}">{{ sermon.ChildContentChannelItem.Title }} - {{ sermon.ChildContentChannelItem | Attribute:'Speaker'}}</option>{% endfor %}
+                	<optgroup label="Select Church">
+										{% for sermon in item.ChildItems %}<option value="{{ LinkedPages.DetailPage }}?Id={{sermon.ChildContentChannelItemId}}">{{ sermon.ChildContentChannelItem.Title }} - {{ sermon.ChildContentChannelItem | Attribute:'Speaker'}}</option>{% endfor %}
 									</optgroup>
                 </select>
                 <a href="/sermons" class="btn btn-primary pull-right">Sermon Archive</a>
