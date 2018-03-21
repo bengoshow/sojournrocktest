@@ -4,10 +4,10 @@
 {% when 'right' %}
 <div class="section">
     <div class="content-block image-right">
-        <div class="image-block wow slideInRight">{{ item | Attribute:'ContentImageSectionImage' }}</div>
+        <div class="image-block wow slideInRight" style="background-image: url('{{ item | Attribute:'ContentImageSectionImage', 'Url' }}')">{{ item | Attribute:'ContentImageSectionImage' }}</div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <h2>{{ item.Title }}</h2>
                     {{ item.Content }}
                 </div>
@@ -18,10 +18,10 @@
 {% when 'left' %}
 <div class="section">
     <div class="content-block image-left">
-        <div class="image-block wow slideInLeft">{{ item | Attribute:'ContentImageSectionImage' }}</div>
+        <div class="image-block wow slideInLeft" style="background-image: url('{{ item | Attribute:'ContentImageSectionImage', 'Url' }}')">{{ item | Attribute:'ContentImageSectionImage' }}</div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-push-6">
+                <div class="col-sm-6 col-sm-push-6">
                     <h2>{{ item.Title }}</h2>
                     {{ item.Content }}
                 </div>
@@ -34,7 +34,7 @@
     <div class="content-block">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-sm-12">
                     <h2>{{ item.Title }}</h2>
                     {{ item.Content }}
                 </div>

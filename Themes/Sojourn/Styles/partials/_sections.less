@@ -1,8 +1,11 @@
 .section {
   background-color: #f7f7f7; 
-  padding: 50px 10px 20px;
+  padding: 50px 0;
   @media (min-width: @screen-md-min) {
-  	padding: 90px 0;
+  	padding: 127px 0;
+  }
+  @media (min-width: @screen-xl-min) {
+  	padding: 191px 0;
   }
   h2, h3 {
     color: @brand-primary;
@@ -115,22 +118,37 @@
     }    
   }
   .content-block {
+	  position: relative;
+	  .image-block {
+			@media (min-width: @screen-sm-min) {
+			  background-size: cover;
+			  background-position: center center;
+		  	width: 50%;
+				position:absolute;
+				top:-50px;
+				bottom: -50px;
+				img {
+					display:none;
+				}
+			}
+		  @media (min-width: @screen-xl-min) {
+			  top: -100px;
+			  bottom: -100px;
+		  }
+		}
 	  &.image-right {
 		  .image-block {
 				@media (min-width: @screen-sm-min) {
-			  	width: 50%;
-					float: right;
+					right:0;
 				}
 		  }
-		  .row {
-			  position: relative;
-			  .col-md-6 {
-					@media (min-width: @screen-sm-min) {
-					  position: absolute;
-						.vc()
-					}
-			  }
-			}
+	  }
+	  &.image-left {
+		  .image-block {
+				@media (min-width: @screen-sm-min) {
+					left:0;
+				}
+		  }
 	  }
   }
 }
@@ -212,7 +230,6 @@
   }
 }
 #zone-main {
-  padding: 90px 0;
 	.zone-content {
 		.container-fixed();
 	  @media (min-width: @screen-sm-min) {
@@ -225,6 +242,13 @@
 	    width: @container-lg;
 	  }
 		.html-content {
+		  padding: 50px 0;
+		  @media (min-width: @screen-md-min) {
+		  	padding: 127px 0;
+		  }
+		  @media (min-width: @screen-xl-min) {
+		  	padding: 191px 0;
+		  }
 			.make-row();
 			.clearfix();
 			.block-content {

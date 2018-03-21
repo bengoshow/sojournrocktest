@@ -1,20 +1,14 @@
-{% page id:'{{ PageParameter.PageId }}' %}
-	{% for page in pageItems %}
-		{% assign pageHeaderImage = page | Attribute:'HeaderImage','Url' %}
-		{% assign pageCampus = page | Attribute:'PageCampus' %}
-	{% endfor %}
-{% endpage %}
-
+{% assign pageHeaderImage = CurrentPage | Attribute:'HeaderImage','Url' %}
+{% assign pageAudience = CurrentPage | Attribute:'PrimaryAudience' | ToCssClass %}
+{% assign pageCampus = CurrentPage | Attribute:'PageCampus' | ToCssClass %}
 <div class="headerImage" style="background-image:url({{ pageHeaderImage }});">
     <div class="titleBlock">
         <h1>{{ 'Global' | Page:'Title' }}</h1>
-        <p class="service-times">{{ pageCampus }}</p>
-        {% comment %}
+        {{ pageAudience }} {{ pageCampus }}
         <ul id="social-media-links" class="list-inline">
             {% for item in Items %}
                 <li><a href="{{ item | Attribute: 'SocialMediaUrl','RawValue' }}" target="_blank" class="{{ item | Attribute: 'SocialMediaIconClass' }}">{{ item.Title }}</a></li>
             {% endfor %}
         </ul>
-        {% endcomment %}
     </div>
 </div>
