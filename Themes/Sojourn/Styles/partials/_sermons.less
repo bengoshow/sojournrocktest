@@ -39,7 +39,6 @@ select.sermon-list {
 				position: relative;
 				.container {
 					position: relative;
-					padding: 20px 0;
 					&:before {
 						content:"";
 						border: solid 20px transparent;
@@ -49,57 +48,22 @@ select.sermon-list {
 						transform: translate(-50%,-100%); 
 						left: 50%;
 						@media (min-width: @screen-sm-min) {
-							left: 25%;
+							left: 75%;
 						}
 					}
-				}
-				@media (min-width: @screen-sm-min) {
-					.container {
-						padding: 41px 0;
+					@media (min-width: @screen-sm-min) {
 						&:before {
 							border-width: 35px;
 						}
 					}
-				}
-				@media (min-width: @screen-xl-min) {
-					.container {
-						padding: 62px 0;
+					@media (min-width: @screen-xl-min) {
 						&:before {
 							border-width: 55px;
 						}
 					}
 				}
-				.sermons-list {
-					margin-top: 25px;
-					@media (min-width: @screen-sm-min) {
-						margin-top: 50px;
-					}
-					@media (min-width: @screen-xl-min) {
-						margin-top: 75px;
-					}
-					&:first-child {
-						margin-top:0;
-					}
-					.series-dates {
-						color: @white;
-						.font(20, bold);
-						margin:0;
-					}
-					li.block-grid-item {
-						.font(18);
-						a {
-							color: @white
-						}
-					}
-					h3 {
-						color: @white;
-						margin:0;
-						text-transform: uppercase;
-						.font(42.66, bold);
-					}
-				}
 			}
-			&:last-child{
+			&:first-child {
 				.container {
 					&:before {
 						@media (min-width: @screen-sm-min) {
@@ -108,6 +72,48 @@ select.sermon-list {
 					}
 				}
 			}
+		}
+	}
+}
+.series-body {
+	background-color: @gray;
+	color: @white;
+	.container {
+		padding: 20px 0;
+		@media (min-width: @screen-sm-min) {
+			padding: 41px 0;
+		}
+		@media (min-width: @screen-xl-min) {
+			padding: 62px 0;
+		}
+	}
+	.sermons-list {
+		margin-top: 25px;
+		@media (min-width: @screen-sm-min) {
+			margin-top: 50px;
+		}
+		@media (min-width: @screen-xl-min) {
+			margin-top: 75px;
+		}
+		&:first-child {
+			margin-top:0;
+		}
+		.series-dates {
+			color: @white;
+			.font(20, bold);
+			margin:0;
+		}
+		li.block-grid-item {
+			.font(18);
+			a {
+				color: @white
+			}
+		}
+		h3 {
+			color: @white;
+			margin:0;
+			text-transform: uppercase;
+			.font(42.66, bold);
 		}
 	}
 }

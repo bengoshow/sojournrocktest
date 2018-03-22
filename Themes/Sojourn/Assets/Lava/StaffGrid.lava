@@ -1,0 +1,61 @@
+﻿{% if PageParameter['groupId'] %}
+	{% assign groupid = PageParameter['groupId'] %}
+{% else %}
+	{% assign groupid = 69461 %}
+{% endif %}
+
+{% group id:'69461' %}
+<select>
+    {% for group in groupItems %}
+        <option>{{ group.Name }}</option>
+        {% for cg in group.Groups %}
+            <option value='{{ cg.Id }}'> - {{ cg.Name }}</option>
+        {% endfor %}
+    {% endfor %}
+</select>
+{% endgroup %}
+
+{% groupmember where:'GroupId == {{groupid}}' sort:'Person.LastName,Person.NickName desc' %}
+    <div class="row">
+      <div class="block-grid-xs-1 block-grid-sm-3 block-grid-md-4">
+       {% for member in groupmemberItems %}
+         {% assign gm = member.Person %}
+            {% assign backgroundImage = gm.Photo.Guid %}
+            	<div class="staffMember block-grid-item">
+	                <div class="staffPhoto">
+	                	<div class="photo"><img src="/GetImage.ashx?guid={{ backgroundImage }}" /></div>
+	                	<div class="contactInfo">
+	                		<div class="content">
+		                		<p class="email"><a href="mailto:{{ gm.Email }}">{{ gm.Email | Replace:'@','@<br>' }}</a></p>
+								<p class="phone">{{ gm | Attribute: 'StaffPhone' }}</p>
+		                		{% if gm.Bio != '' %}
+		                		<p class="biolink"><a class="bioButton" href="#modal{{gm.Id}}" data-toggle="modal">Bio</a></p>
+                        <div class="modal fade" id="modal{{gm.Id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">{% if gm.NickName != empty %}{{ gm.NickName }}{% else %}{{ gm.FirstName }}{% endif %} {{ gm.LastName }}</h4>
+                              </div>
+                              <div class="modal-body">
+                                {{ gm.Bio }}
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              </div>
+                            </div><!-- /.modal-content -->
+                          </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+                        {% endif %}
+	                		</div>
+	                	</div>
+	                </div>
+	                <div class="nameTitle">
+	                    <p class="name">{% if gm.NickName != empty %}{{ gm.NickName }}{% else %}{{ gm.FirstName }}{% endif %} {{ gm.LastName }}</p>
+	                    <p class="title">{{ gm | Attribute: 'StaffTitle' }} {{ gm | Attribute: 'MinistryArea' }}</p>
+	                </div>
+                </div>
+        {% endfor %}
+      </div>
+    </div>
+{% endgroupmember %}

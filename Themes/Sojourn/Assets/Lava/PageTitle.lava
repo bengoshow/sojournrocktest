@@ -1,0 +1,24 @@
+<div class="page-title-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-title">
+{% if PageParameter.Item %}
+    {% assign ccid = PageParameter.Item %}
+    {% contentchannelitemassociation where:'ChildContentChannelItemId == {{ccid}}' %}
+        {% assign item = contentchannelitemassociationItems | First %}
+        {% assign ParentContentChannelId = item.ContentChannelItemId %}
+        {% contentchannelitemassociation where:'ContentChannelItemId == {{ParentContentChannelId}}' %}
+	        {% assign parentItem = contentchannelitemassociationItems | First %}
+	        {{ parentItem.ContentChannelItem.Title }}: 
+        {% endcontentchannelitemassociation %}
+        {{ item.ChildContentChannelItem.Title }}
+    {% endcontentchannelitemassociation %}
+{% else %}
+            {{ CurrentPage.PageTitle }}
+{% endif %}
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
