@@ -2,7 +2,7 @@
 	{% for item in Items %}
 	{% assign ctr = forloop.index0 | Modulo:2 %}
 	{% assign seriesImageGuid = item | Attribute:'SeriesImage','RawValue' %}
-	{% if ctr =="0" %}
+	{% if ctr == 0 %}
 	<div class="container">
 		<div class="row">
 	{% endif %}
@@ -15,13 +15,8 @@
 				{% endif %}			
 			</article>
 		</div>
-	{% if ctr =="1" or forloop.last %}
-		</div>
-	</div>
-	<div>
-		{{ sermonslist }}
-		{% if ctr=="1" %}
-			<div class="series-body" id="{{ item.Title | ToCssClass }}">
+		<div class="series-container" id="{{ item.Title | ToCssClass }}">
+			<div class="series-body">
 				<div class="container">
 			{% for week in item.ChildItems %}
 					<div class="sermons-list">
@@ -51,9 +46,13 @@
 			{% endfor %}
 				</div>			
 			</div>
-			{% endif %}
 		</div>
+	{% if ctr == 1 %}
+		</div>
+	</div>
 	{% endif %}
-
+	{% if ctr == 1 or forloop.last == true %}
+	<div class="series-sermons"></div>
+	{% endif %}
 	{% endfor -%}
 </div>

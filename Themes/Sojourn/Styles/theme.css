@@ -10681,61 +10681,79 @@ select.sermon-list {
 .series-list .series .series-image h2 {
   display: none;
 }
-.series-list .series-body {
+.series-list .series-sermons {
+  transform: translateY(-30px);
+}
+.series-list .series-sermons .series-container {
   display: none;
+  padding: 25px 0;
+}
+@media (min-width: 768px) {
+  .series-list .series-sermons .series-container {
+    padding-top: 40px;
+  }
+}
+@media (min-width: 1700px) {
+  .series-list .series-sermons .series-container {
+    padding-top: 65px;
+  }
+}
+.series-list .series-sermons .series-container .series-body {
   background-color: #555555;
   color: #ffffff;
-  padding: 20px 0;
-  margin: 25px 0;
   position: relative;
 }
-.series-list .series-body:before {
+.series-list .series-sermons .series-container .series-body .container {
+  position: relative;
+  padding: 20px 0;
+}
+.series-list .series-sermons .series-container .series-body .container:before {
   content: "";
   border: solid 20px transparent;
   border-bottom-color: #555555;
   position: absolute;
   top: 0;
-  left: 25%;
-  transform: translateY(-100%);
+  transform: translate(-50%, -100%);
+  left: 50%;
 }
 @media (min-width: 768px) {
-  .series-list .series-body {
-    margin-top: 40px;
+  .series-list .series-sermons .series-container .series-body .container:before {
+    left: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .series-list .series-sermons .series-container .series-body .container {
     padding: 41px 0;
   }
-  .series-list .series-body:before {
+  .series-list .series-sermons .series-container .series-body .container:before {
     border-width: 35px;
   }
 }
 @media (min-width: 1700px) {
-  .series-list .series-body {
-    margin-top: 65px;
+  .series-list .series-sermons .series-container .series-body .container {
     padding: 62px 0;
   }
-  .series-list .series-body:before {
+  .series-list .series-sermons .series-container .series-body .container:before {
     border-width: 55px;
   }
 }
-.series-list .series-body:last-child:before {
-  left: 75%;
-}
-.series-list .series-body .sermons-list {
+.series-list .series-sermons .series-container .series-body .sermons-list {
   margin-top: 25px;
 }
 @media (min-width: 768px) {
-  .series-list .series-body .sermons-list {
+  .series-list .series-sermons .series-container .series-body .sermons-list {
     margin-top: 50px;
   }
 }
 @media (min-width: 1700px) {
-  .series-list .series-body .sermons-list {
+  .series-list .series-sermons .series-container .series-body .sermons-list {
     margin-top: 75px;
   }
 }
-.series-list .series-body .sermons-list:first-child {
+.series-list .series-sermons .series-container .series-body .sermons-list:first-child {
   margin-top: 0;
 }
-.series-list .series-body .sermons-list .series-dates {
+.series-list .series-sermons .series-container .series-body .sermons-list .series-dates {
   color: #ffffff;
   font-size: 20px;
   font-size: 2rem;
@@ -10743,16 +10761,16 @@ select.sermon-list {
   font-style: normal;
   margin: 0;
 }
-.series-list .series-body .sermons-list li.block-grid-item {
+.series-list .series-sermons .series-container .series-body .sermons-list li.block-grid-item {
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: normal;
   font-style: normal;
 }
-.series-list .series-body .sermons-list li.block-grid-item a {
+.series-list .series-sermons .series-container .series-body .sermons-list li.block-grid-item a {
   color: #ffffff;
 }
-.series-list .series-body .sermons-list h3 {
+.series-list .series-sermons .series-container .series-body .sermons-list h3 {
   color: #ffffff;
   margin: 0;
   text-transform: uppercase;
@@ -10760,6 +10778,11 @@ select.sermon-list {
   font-size: 4.266rem;
   font-weight: bold;
   font-style: normal;
+}
+@media (min-width: 768px) {
+  .series-list .series-sermons .series-container:last-child .container:before {
+    left: 75%;
+  }
 }
 #subfooter {
   background-color: #AFAFAF;

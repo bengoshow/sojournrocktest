@@ -98,16 +98,29 @@ jQuery(function($){
 		  $(this).find('.select-overlay').css('visibility','visible');
 		});
   });
-	$('select.sermon-list').on('change', function(){
+	$('select.sermon-list, select.select-church').on('change', function(){
 		var url = $(this).val(); // get selected value
 		if (url) { // require a URL
 		    window.location = url; // redirect
 		}
 		return false;
 	});
+	var windowWidth = $(window).width();
+	if (windowWidth >= 768) {
+		$('.series-list .series-container').each(function(){
+			var parentContainer = $(this).closest('.container').next();
+			$(this).appendTo(parentContainer);
+		});
+	}
 	$('.series-opener').on('click touchstart', function(e){
 		e.preventDefault();
+		$('.series-container').hide();
 		var seriesblock = $(this).data('openseries');
-		$("#"+seriesblock).slideDown();
+		if ($("#"+seriesblock).hasClass('open')) {
+			$('.series-container').removeClass('open');		
+		} else {
+			$('.series-container').removeClass('open');		
+			$("#"+seriesblock).addClass('open').slideDown();			
+		}
 	});
 });
