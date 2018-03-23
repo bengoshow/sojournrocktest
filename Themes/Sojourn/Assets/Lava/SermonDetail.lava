@@ -2,10 +2,10 @@
 {% if item  %}
     {% assign ParentContentChannelId = item.ParentItems[0].ContentChannelItemId %}
     {% contentchannelitemassociation where:'ChildContentChannelItemId == {{ParentContentChannelId}}' %}
-    	{% assign SeriesContentChannel = contentchannelitemassociation %}
         {% for grandParentItem in contentchannelitemassociationItems %}
 						{% assign currentSeriesImageGuid = grandParentItem.ContentChannelItem | Attribute:'SeriesImage','RawValue' %}
             {% assign SeriesTitle = grandParentItem.ContentChannelItem.Title %}
+						{% assign SeriesId = grandParentItem.ContentChannelItem.Id %}
         {% endfor %}
     {% endcontentchannelitemassociation %}
 
@@ -40,7 +40,7 @@
       <div class="col-sm-12">
 				<article class="message-detail">
 					<h1>{{ item.Title }}</h1>
-					<p><strong> {{ item | Attribute:'Speaker' }} - {{ item.StartDateTime | Date:'M/d/yyyy' }}</strong></p>
+					<p><strong>{{ item | Attribute:'Speaker' }} - {{ item.StartDateTime | Date:'M/d/yyyy' }}</strong></p>
 					{{ item.Content }}
 				</article>
 			</div>
@@ -50,9 +50,9 @@
 <div class="series-container">
 	<div class="series-body">
 		<div class="container">
-			<h2>Other Sermons in the Series "{{SeriesTitle}}"</h2>
-			{{ SeriesContentChannel | ToJSON }}
-			{% for week in SeriesContentChannel.ChildItems %}
+			<h2>Other Sermons in the Series "{{SeriesId}}:{{SeriesTitle}}"</h2>
+			{% contentchannelitem id:'{{SeriesId}}'%}
+			{% for week in contentchannelitem.ChildItems %}
 					<div class="sermons-list">
 						<div class="row">
 							<div class="col-sm-6 col-md-4">
@@ -78,6 +78,7 @@
 						</div>
 					</div>
 			{% endfor %}
+			{% endcontentchannelitem %}
 		</div>			
 	</div>
 </div>

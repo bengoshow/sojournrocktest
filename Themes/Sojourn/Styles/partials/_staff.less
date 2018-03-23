@@ -1,0 +1,46 @@
+.staffGrid {
+	.staffMember {
+		.staffPhoto {
+			.photo {
+				border-radius: 100%;
+				overflow: hidden;
+				margin-bottom: 15px;
+				@media (min-width: @screen-sm-min) {
+					margin-bottom: 20px;
+				}
+				@media (min-width: @screen-lg-min) {
+					margin-bottom: 30px;
+				}
+				img {
+					max-width: 100%;				
+				}
+				position: relative;
+				.bioButton {
+					display:block;
+					&:hover {
+						&:before{
+							.overlay(fade(@gray,50%));
+							z-index: 5;
+						}
+						&:after {
+							color: @white;
+							content: "+";
+							position: absolute;
+							.vc();
+							.hc();
+							z-index: 10;
+							.font(20);
+						}						
+					}
+				}
+			}
+		}
+		.nameTitle {
+			text-align: center;
+			.font(20);
+			p {
+				margin:0;
+			}
+		}
+	}
+}

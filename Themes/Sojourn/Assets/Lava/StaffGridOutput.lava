@@ -1,6 +1,6 @@
 <p>
 {% for row in table1.rows %}
-<a class="btn btn-default" href="?groupId={{ row.id }}">{{ row.name }}</a>
+<a class="btn btn-primary" href="?groupId={{ row.id }}">{{ row.name }}</a>
 {% endfor %}
 </p>
     <div class="row">

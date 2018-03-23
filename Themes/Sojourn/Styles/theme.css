@@ -10125,6 +10125,7 @@ header.opaque .navbar .menu-opener:hover {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  font-family: "Font Awesome 5";
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -10584,18 +10585,34 @@ header.opaque .navbar .menu-opener:hover {
     font-size: 55px;
   }
 }
+#accordion.panel-group .panel,
 .accordion.panel-group .panel {
   border: none;
   background: none;
+  box-shadow: none;
 }
+#accordion.panel-group .panel-heading,
 .accordion.panel-group .panel-heading {
   background: none;
   border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #555555;
 }
+#accordion.panel-group .panel-title,
+.accordion.panel-group .panel-title {
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+}
+#accordion.panel-group .panel-title a,
 .accordion.panel-group .panel-title a {
+  text-decoration: none;
   display: block;
   position: relative;
 }
+#accordion.panel-group .panel-title a:after,
 .accordion.panel-group .panel-title a:after {
   position: absolute;
   top: 50%;
@@ -10604,6 +10621,10 @@ header.opaque .navbar .menu-opener:hover {
   font-family: "Font Awesome 5";
   font-weight: 900;
   content: "\f067";
+}
+#accordion.panel-group .panel-body,
+.accordion.panel-group .panel-body {
+  border: none;
 }
 .block-grid.events-grid > .block-grid-item,
 .block-grid.events-grid > li {
@@ -10796,6 +10817,61 @@ select.sermon-list {
   font-size: 4.266rem;
   font-weight: bold;
   font-style: normal;
+}
+.staffGrid .staffMember .staffPhoto .photo {
+  border-radius: 100%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .staffGrid .staffMember .staffPhoto .photo {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .staffGrid .staffMember .staffPhoto .photo {
+    margin-bottom: 30px;
+  }
+}
+.staffGrid .staffMember .staffPhoto .photo img {
+  max-width: 100%;
+}
+.staffGrid .staffMember .staffPhoto .photo .bioButton {
+  display: block;
+}
+.staffGrid .staffMember .staffPhoto .photo .bioButton:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(85, 85, 85, 0.5);
+  z-index: 5;
+}
+.staffGrid .staffMember .staffPhoto .photo .bioButton:hover:after {
+  color: #ffffff;
+  content: "+";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+  z-index: 10;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: normal;
+  font-style: normal;
+}
+.staffGrid .staffMember .nameTitle {
+  text-align: center;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: normal;
+  font-style: normal;
+}
+.staffGrid .staffMember .nameTitle p {
+  margin: 0;
 }
 #subfooter {
   background-color: #AFAFAF;
