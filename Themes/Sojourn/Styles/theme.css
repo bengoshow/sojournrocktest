@@ -8507,27 +8507,27 @@ fieldset[disabled] .btn-action.focus {
   background-color: #245682;
 }
 .btn-security {
-  color: #fff;
+  color: #333333;
   background-color: transparent;
-  border-color: #fff;
+  border-color: #333333;
 }
 .btn-security:focus,
 .btn-security.focus {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #bfbfbf;
+  border-color: #000000;
 }
 .btn-security:hover {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #e0e0e0;
+  border-color: #141414;
 }
 .btn-security:active,
 .btn-security.active,
 .open > .dropdown-toggle.btn-security {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #e0e0e0;
+  border-color: #141414;
 }
 .btn-security:active:hover,
 .btn-security.active:hover,
@@ -8538,9 +8538,9 @@ fieldset[disabled] .btn-action.focus {
 .btn-security:active.focus,
 .btn-security.active.focus,
 .open > .dropdown-toggle.btn-security.focus {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #bfbfbf;
+  border-color: #000000;
 }
 .btn-security:active,
 .btn-security.active,
@@ -8557,35 +8557,35 @@ fieldset[disabled] .btn-security:focus,
 .btn-security[disabled].focus,
 fieldset[disabled] .btn-security.focus {
   background-color: transparent;
-  border-color: #fff;
+  border-color: #333333;
 }
 .btn-security .badge {
   color: transparent;
-  background-color: #fff;
+  background-color: #333333;
 }
 .btn-authentication {
   width: 100%;
-  color: #fff;
+  color: #333333;
   background-color: transparent;
-  border-color: #fff;
+  border-color: #333333;
 }
 .btn-authentication:focus,
 .btn-authentication.focus {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #bfbfbf;
+  border-color: #000000;
 }
 .btn-authentication:hover {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #e0e0e0;
+  border-color: #141414;
 }
 .btn-authentication:active,
 .btn-authentication.active,
 .open > .dropdown-toggle.btn-authentication {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #e0e0e0;
+  border-color: #141414;
 }
 .btn-authentication:active:hover,
 .btn-authentication.active:hover,
@@ -8596,9 +8596,9 @@ fieldset[disabled] .btn-security.focus {
 .btn-authentication:active.focus,
 .btn-authentication.active.focus,
 .open > .dropdown-toggle.btn-authentication.focus {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #bfbfbf;
+  border-color: #000000;
 }
 .btn-authentication:active,
 .btn-authentication.active,
@@ -8615,11 +8615,11 @@ fieldset[disabled] .btn-authentication:focus,
 .btn-authentication[disabled].focus,
 fieldset[disabled] .btn-authentication.focus {
   background-color: transparent;
-  border-color: #fff;
+  border-color: #333333;
 }
 .btn-authentication .badge {
   color: transparent;
-  background-color: #fff;
+  background-color: #333333;
 }
 .btn-authentication:hover {
   background-color: rgba(0, 0, 0, 0);
@@ -9549,23 +9549,12 @@ div.aspNetDisabled {
   color: #fff;
 }
 .headerImage .titleBlock p {
-  font-size: 23px;
-  font-size: 2.3rem;
-  font-weight: normal;
-  font-style: normal;
+  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
+  font-style: normal;
   margin-top: 35px;
-  border-top: solid white 2px;
-  padding-top: 35px;
   color: white;
-}
-@media (max-width: 768px) {
-  .headerImage .titleBlock p {
-    font-size: 16px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    font-style: normal;
-  }
 }
 .headerImage .titleBlock ul li a {
   display: block;
@@ -9598,6 +9587,21 @@ div.aspNetDisabled {
   height: inherit;
   position: relative;
   z-index: 10;
+}
+.page_subnav {
+  background: #555555;
+  font-size: 14.666px;
+  font-size: 1.4666000000000001rem;
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+}
+.page_subnav strong {
+  text-transform: uppercase;
+  padding: 10px;
+}
+.page_subnav ul li a {
+  color: #ffffff;
 }
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -10125,7 +10129,6 @@ header.opaque .navbar .menu-opener:hover {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  font-family: "Font Awesome 5";
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -10626,6 +10629,9 @@ header.opaque .navbar .menu-opener:hover {
 .accordion.panel-group .panel-body {
   border: none;
 }
+#churches-list .campus {
+  text-align: center;
+}
 .block-grid.events-grid > .block-grid-item,
 .block-grid.events-grid > li {
   width: 50%;
@@ -10705,11 +10711,13 @@ select.sermon-list {
 .series-list .series .series-image h2 {
   display: none;
 }
+.series-list .series-container {
+  display: none;
+}
 .series-list .series-sermons {
   transform: translateY(-30px);
 }
 .series-list .series-sermons .series-container {
-  display: none;
   padding: 25px 0;
 }
 @media (min-width: 768px) {
@@ -10756,7 +10764,7 @@ select.sermon-list {
 }
 @media (min-width: 768px) {
   .series-list .series-sermons .series-container:first-child .container:before {
-    left: 75%;
+    left: 25%;
   }
 }
 .series-body {
@@ -10928,7 +10936,7 @@ select.sermon-list {
   }
 }
 #subfooter .contact-info p {
-  margin: 0;
+  margin: 15px 0;
 }
 #subfooter .login {
   text-transform: uppercase;
@@ -10944,7 +10952,7 @@ select.sermon-list {
 }
 #subfooter .login .navbar-nav a {
   background: none;
-  padding: 0;
+  padding: 15px;
   font-weight: bold;
 }
 footer {
@@ -11107,6 +11115,63 @@ footer .poweredbyfishhook {
   .container {
     width: 1640px;
   }
+}
+.btn-white {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+}
+.btn-white:focus,
+.btn-white.focus {
+  color: #ffffff;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-white:hover {
+  color: #ffffff;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-white:active,
+.btn-white.active,
+.open > .dropdown-toggle.btn-white {
+  color: #ffffff;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-white:active:hover,
+.btn-white.active:hover,
+.open > .dropdown-toggle.btn-white:hover,
+.btn-white:active:focus,
+.btn-white.active:focus,
+.open > .dropdown-toggle.btn-white:focus,
+.btn-white:active.focus,
+.btn-white.active.focus,
+.open > .dropdown-toggle.btn-white.focus {
+  color: #ffffff;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-white:active,
+.btn-white.active,
+.open > .dropdown-toggle.btn-white {
+  background-image: none;
+}
+.btn-white.disabled:hover,
+.btn-white[disabled]:hover,
+fieldset[disabled] .btn-white:hover,
+.btn-white.disabled:focus,
+.btn-white[disabled]:focus,
+fieldset[disabled] .btn-white:focus,
+.btn-white.disabled.focus,
+.btn-white[disabled].focus,
+fieldset[disabled] .btn-white.focus {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+.btn-white .badge {
+  color: transparent;
+  background-color: #ffffff;
 }
 html {
   text-rendering: optimizeLegibility;

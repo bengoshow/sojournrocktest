@@ -22,10 +22,12 @@ select.sermon-list {
 			}
 		}
 	}
+	.series-container {
+		display: none;
+	}
 	.series-sermons {
 		transform:translateY(-30px);
 		.series-container {
-			display: none;
 			padding: 25px 0;
 			@media (min-width: @screen-sm-min) {
 				padding-top: 40px;
@@ -67,7 +69,7 @@ select.sermon-list {
 				.container {
 					&:before {
 						@media (min-width: @screen-sm-min) {
-							left: 75%;
+							left: 25%;
 						}
 					}
 				}

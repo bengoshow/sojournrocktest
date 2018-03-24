@@ -50,7 +50,7 @@
 <div class="series-container">
 	<div class="series-body">
 		<div class="container">
-			<h2>Other Sermons in the Series "{{SeriesId}}:{{SeriesTitle}}"</h2>
+			<h2>Other Sermons in the Series "{{SeriesTitle}}"</h2>
 			{% contentchannelitem id:'{{SeriesId}}'%}
 			{% for week in contentchannelitem.ChildItems %}
 					<div class="sermons-list">

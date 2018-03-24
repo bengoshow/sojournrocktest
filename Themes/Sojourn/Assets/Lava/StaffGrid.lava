@@ -4,13 +4,13 @@
 	{% assign groupid = 72301 %}
 {% endif %}
 
-{% comment group where:'ParentGroupId == 72301' sort:'Name' %}{%endcomment%}
-{% group where:'ParentGroupId == 70552' sort:'Name' %}
+{% comment group where:'ParentGroupId == 70552' sort:'Name' %}{%endcomment%}
+{% group where:'ParentGroupId == 72301' sort:'Name' %}
 	{[ accordion firstopen:'false' ]}
       {% for cg in groupItems %}
 				[[ item title:'{{ cg.Name }}' ]]
         <div class="staffGrid">
-					{% groupmember where:'GroupId == {{ cg.Id }}' sort:'Person.LastName,Person.NickName desc' %}
+					{% groupmember where:'GroupId == {{ cg.Id }}' sort:'Role,Person.LastName,Person.NickName desc'%}
 					      <div class="block-grid-xs-1 block-grid-sm-3 block-grid-md-5">
 					       {% for member in groupmemberItems %}
 					         	{% assign gm = member.Person %}

@@ -42,7 +42,9 @@ jQuery(function($){
 	var didScroll = true;
 	var lastScrollTop = 0;
 	var delta = 5;
-	var navbarHeight = $('header').outerHeight();
+	var navbarHeight = $('header nav').outerHeight();
+	var headerImageHeight = $('.headerImage').outerHeight();
+	var pageSubnavHeight = $('.page_subnav').outerHeight();
 	
 	$(window).scroll(function(){
 	    didScroll = true;
@@ -57,17 +59,25 @@ jQuery(function($){
 	
 	function hasScrolled() {
 	    var st = $(this).scrollTop();
-	    
+	    //console.log(st);
 	    // Make sure they scroll more than delta
 	    if(Math.abs(lastScrollTop - st) <= delta)
 	        return;
 	    
 	    // If they scrolled down and are past the navbar, add class .nav-up.
 	    // This is necessary so you never see what is "behind" the navbar.
-	    if (st > navbarHeight){
+	    if (st > 10){
 	        $('header').addClass('opaque');
 	    } else {
 	        $('header').removeClass('opaque');
+	    }
+
+	    if (st >= (headerImageHeight - navbarHeight)){
+	        $('.page_subnav').addClass('navbar-fixed-top').css('top',navbarHeight+'px');
+	        $('.headerImage').css('margin-bottom',pageSubnavHeight+'px');
+	    } else {
+	        $('.page_subnav').removeClass('navbar-fixed-top').css('top','auto');
+	        $('.headerImage').css('margin-bottom',0);
 	    }
 	    
 	    lastScrollTop = st;

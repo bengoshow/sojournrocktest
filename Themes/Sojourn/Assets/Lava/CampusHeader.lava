@@ -1,16 +1,15 @@
 {% assign pageHeaderImage = CurrentPage | Attribute:'HeaderImage','Url' %}
-{% assign pageAudience = CurrentPage | Attribute:'PrimaryAudience' | ToCssClass %}
-{% assign pageCampus = CurrentPage | Attribute:'PageCampus' | ToCssClass %}
+{% assign pageAudience = CurrentPage | Attribute:'PrimaryAudience' %}
+{% assign pageCampus = CurrentPage | Attribute:'PageCampus' %}
 <div class="headerImage" style="background-image:url({{ pageHeaderImage }});">
     <div class="titleBlock">
         <h1>{{ 'Global' | Page:'Title' }}</h1>
-        <p class="service-times">{{ pageCampus }}</p>
-        {% comment %}
-        <ul id="social-media-links" class="list-inline">
-            {% for item in Items %}
-                <li><a href="{{ item | Attribute: 'SocialMediaUrl','RawValue' }}" target="_blank" class="{{ item | Attribute: 'SocialMediaIconClass' }}">{{ item.Title }}</a></li>
-            {% endfor %}
-        </ul>
-        {% endcomment %}
+        {% campus where:'Name == "{{pageCampus}}"' %}
+        {% assign serviceDay = "" %}
+        {% assign pagecampus = campusItems | First %}
+        {% assign campusServiceTimes = pagecampus.ServiceTimes | Split:'|' %}
+        <p class="service-times">{% for serviceTime in campusServiceTimes %}{% assign serviceDayTime = serviceTime | Split:'^' %}{% if serviceDayTime[0] != serviceDay %}{{ serviceDayTime[0] | Pluralize }} at {% assign serviceDay = serviceDayTime[0] %}{% endif %}{% if forloop.length > 1 %}{% if forloop.last %} and {% elseif forloop.first != true %}, {% endif %}{% endif %}{{ serviceDayTime[1] }}{% endfor %}</p>
+	      {% endcampus %}
+        <p><a href="#locationmap" class="btn btn-white btn-larg">Location & Contact Info</a></p>
     </div>
 </div>
