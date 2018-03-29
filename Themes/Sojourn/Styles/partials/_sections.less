@@ -153,6 +153,7 @@
   }
 }
 #latest-sermon {
+	padding:0;
 	@media (min-width: @screen-sm-min) {
 		min-height: 39vw;
 	}
@@ -320,25 +321,43 @@
 // Wrap a series of panels in `.panel-group` to turn them into an accordion with
 // the help of our collapse JavaScript plugin.
 
+#accordion.panel-group,
 .accordion.panel-group {
   .panel {
 		border:none;
 		background:none;
+	  box-shadow: none;
   }
   .panel-heading {
 	  background:none;
 	  border:none;
+	  padding: 10px 0;
+	  border-bottom: solid 1px @gray;
   }
-  .panel-title a {
-	  display: block;
-	  position: relative;
-	  &:after {
-		  position: absolute;
-		  .vc();
-		  right:0;
-      font-family: @fa-font-face;
-      font-weight: @fa-theme-weight;
-		  content: @fa-var-plus;
-	  }
+  .panel-title {
+	  .font(24, bold);
+	  text-transform: uppercase;
+	  a {
+		  text-decoration: none;
+		  display: block;
+		  position: relative;
+		  &:after {
+			  position: absolute;
+			  .vc();
+			  right:0;
+	      font-family: @fa-font-face;
+	      font-weight: @fa-theme-weight;
+			  content: @fa-var-plus;
+		  }
+		}
   }
+  .panel-body {
+	  border:none;
+  }
+}
+
+#churches-list {
+	.campus {
+		text-align: center;
+	}
 }

@@ -1,0 +1,85 @@
+﻿{% assign item = Items | First %}
+{% if item  %}
+    {% assign ParentContentChannelId = item.ParentItems[0].ContentChannelItemId %}
+    {% contentchannelitemassociation where:'ChildContentChannelItemId == {{ParentContentChannelId}}' %}
+        {% for grandParentItem in contentchannelitemassociationItems %}
+						{% assign currentSeriesImageGuid = grandParentItem.ContentChannelItem | Attribute:'SeriesImage','RawValue' %}
+            {% assign SeriesTitle = grandParentItem.ContentChannelItem.Title %}
+						{% assign SeriesId = grandParentItem.ContentChannelItem.Id %}
+        {% endfor %}
+    {% endcontentchannelitemassociation %}
+
+{% assign videoLink = item | Attribute:'VideoLink','RawValue' %}
+{% assign videoEmbed = item | Attribute:'VideoEmbed' %}
+{% assign audioLink = item | Attribute:'AudioLink','RawValue' %}
+
+<div id="latest-sermon" class="section hasbg" style="background-image: url('/GetImage.ashx?Guid={{ currentSeriesImageGuid }}')">
+		{% if videoEmbed != '' %}
+			{{ videoEmbed }}
+		{% endif %}
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="series-footer">
+            	<ul class="list-inline pull-left">
+							{% if audioLink != '' %}
+								<li><a href="{{ audioLink }}" class="listen"><i class="fa fa-play-circle"></i> Listen</a></li>
+								<li><a href="{{ audioLink }}" class="download"><i class="fa fa-download"></i> Download</a></li>
+							{% endif %}
+								<li><a href="#share" class="share"><i class="fa fa-share"></i> Share</a></li>
+            	</ul>
+              <a href="/sermons" class="btn btn-primary pull-right">Back to Archive</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+	<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+				<article class="message-detail">
+					<h1>{{ item.Title }}</h1>
+					<p><strong>{{ item | Attribute:'Speaker' }} - {{ item.StartDateTime | Date:'M/d/yyyy' }}</strong></p>
+					{{ item.Content }}
+				</article>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="series-container">
+	<div class="series-body">
+		<div class="container">
+			<h2>Other Sermons in the Series "{{SeriesTitle}}"</h2>
+			{% contentchannelitem id:'{{SeriesId}}'%}
+			{% for week in contentchannelitem.ChildItems %}
+					<div class="sermons-list">
+						<div class="row">
+							<div class="col-sm-6 col-md-4">
+								<p class="series-dates">
+									{{ week.ChildContentChannelItem.StartDateTime | Date:'M/d/yyyy' }} 
+									{% if week.ChildContentChannelItem.ExpireDateTime and week.ChildContentChannelItem.ExpireDateTime != "" %}
+										{% if week.ChildContentChannelItem.StartDateTime != week.ChildContentChannelItem.ExpireDateTime %}
+											- {{ week.ChildContentChannelItem.ExpireDateTime | Date:'M/d/yyyy' }}
+										{% endif %}
+									{% endif %}
+								</p>
+								<h3>{{ week.ChildContentChannelItem.Title }}</h3>
+							</div>
+							<div class="col-sm-6 col-md-8">
+								<ul class="block-grid-sm-2">
+								{% contentchannelitem id:'{{week.ChildContentChannelItemId}}' %}
+									{% for sermon in contentchannelitem.ChildItems %}
+										<li class="block-grid-item"><a class="sermon-link" href="{{ LinkedPages.DetailPage }}?Item={{ sermon.ChildContentChannelItem.Id }}"><strong>{{ sermon.ChildContentChannelItem.Title }}:</strong> {{ sermon.ChildContentChannelItem | Attribute:'Speaker' }}</a></li>
+									{% endfor %}
+								{% endcontentchannelitem %}
+								</ul>
+							</div>
+						</div>
+					</div>
+			{% endfor %}
+			{% endcontentchannelitem %}
+		</div>			
+	</div>
+</div>
+{% endif %}

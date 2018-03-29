@@ -10,7 +10,6 @@
     padding-right:0;
     padding-left:0;
 }
-
 //in .vc() and .hc() below, the +_ suffix lets you combine both mixins for one class, instead of the last one called overriding anything before: http://lesscss.org/features/#merge-feature
 .vc(){
   top: 50%;
@@ -36,7 +35,15 @@
     bottom: 0;
   }
 }
-
+.overlay(@color) {
+	content:"";
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color: @color;
+}
 // Button variants
 //
 // Easily pump out default styles, as well as :hover, :focus, :active,

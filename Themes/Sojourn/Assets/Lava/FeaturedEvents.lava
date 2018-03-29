@@ -1,0 +1,80 @@
+{% assign eventItemCount = EventItems | Size %}
+
+{% if eventItemCount == 0 %}
+<div class="panel panel-default margin-t-md">
+  <div class="margin-all-md"> There are no events in this time frame.</div>
+</div>
+
+{% else %}
+
+<div class="row grid">
+  {% for events in EventItems %}
+  {% assign loopIndex = forloop.index | Modulo:5 %}
+  {% assign EventItem = events | First %}
+    {% if loopIndex == 1 %}
+      <div class="col-sm-12 block">
+    {% elseif loopIndex == 2 %}
+      <div class="row grid">
+        <div class="col-sm-12 col-md-6 block">
+		  <div class="row">
+			<div class="col-sm-12 block">
+    {% elseif loopIndex == 3 %}
+			<div class="col-sm-12 block">
+    {% elseif loopIndex == 4 %}
+        <div class="col-sm-12 col-md-6 block">
+		  <div class="row">
+			<div class="col-sm-12 block">
+    {% elseif loopIndex == 0 %}
+			<div class="col-sm-12 block">
+    {% endif %}
+
+	{% if EventItem.DetailPage != null %}
+		<a href="{{ EventItem.DetailPage }}">
+	{% else %}
+		<a href="{{ DetailsPage }}?EventOccurrenceId={{ EventItem.EventItemOccurrence.Id }}">
+	{% endif %}
+
+		<div class="eventblock {% cycle 'tall','tall','short','short','tall' %} mod{{loopIndex}}" 
+		{% if EventItem.EventItemOccurrence.EventItem.PhotoId %} style="background-image:url('/GetImage.ashx?id={{  EventItem.EventItemOccurrence.EventItem.PhotoId }}');background-position:center;background-size:cover;"{%endif%}
+		>
+		{% assign id = EventItem.EventItemOccurrence.EventItemId %}
+
+<!--
+<p class="label"><em>
+{% eventitemaudience where:'EventItemId == {{id}}' %}
+    {% for item in eventitemaudienceItems %}
+      <span>{{ item.DefinedValue.Value }}</span>
+    {% endfor %}
+{% endeventitemaudience %}
+</em></p>
+-->
+
+			<p class="date"><em>{{ EventItem.Date | Date:'MMMM d' }}</em></p>
+			<div class="vc">
+			<h2 class="block-title">{{ EventItem.Name }}</h2>
+			</div>
+		</div>
+		</a>
+
+	{% if loopIndex == 1 %}
+		</div> <!--//.block-->
+	</div> <!--//.row-->
+	{% elseif loopIndex == 2 %}
+	</div> <!--//.block-->
+	{% elseif loopIndex == 3 %}
+			</div> <!--//.block-->
+		</div> <!--//.row-->
+	</div> <!--//.block-->
+	{% elseif loopIndex == 4 %}
+	</div> <!--//.block-->
+	{% elseif loopIndex == 0 %}
+			</div> <!--//.block-->
+		</div> <!--//.row-->
+	</div> <!--//.block-->
+	{% endif %}
+
+  {% endfor %}
+
+</div> <!--//.row.grid-->
+
+{% endif %}

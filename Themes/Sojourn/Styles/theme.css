@@ -8507,27 +8507,27 @@ fieldset[disabled] .btn-action.focus {
   background-color: #245682;
 }
 .btn-security {
-  color: #fff;
+  color: #333333;
   background-color: transparent;
-  border-color: #fff;
+  border-color: #333333;
 }
 .btn-security:focus,
 .btn-security.focus {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #bfbfbf;
+  border-color: #000000;
 }
 .btn-security:hover {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #e0e0e0;
+  border-color: #141414;
 }
 .btn-security:active,
 .btn-security.active,
 .open > .dropdown-toggle.btn-security {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #e0e0e0;
+  border-color: #141414;
 }
 .btn-security:active:hover,
 .btn-security.active:hover,
@@ -8538,9 +8538,9 @@ fieldset[disabled] .btn-action.focus {
 .btn-security:active.focus,
 .btn-security.active.focus,
 .open > .dropdown-toggle.btn-security.focus {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #bfbfbf;
+  border-color: #000000;
 }
 .btn-security:active,
 .btn-security.active,
@@ -8557,35 +8557,35 @@ fieldset[disabled] .btn-security:focus,
 .btn-security[disabled].focus,
 fieldset[disabled] .btn-security.focus {
   background-color: transparent;
-  border-color: #fff;
+  border-color: #333333;
 }
 .btn-security .badge {
   color: transparent;
-  background-color: #fff;
+  background-color: #333333;
 }
 .btn-authentication {
   width: 100%;
-  color: #fff;
+  color: #333333;
   background-color: transparent;
-  border-color: #fff;
+  border-color: #333333;
 }
 .btn-authentication:focus,
 .btn-authentication.focus {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #bfbfbf;
+  border-color: #000000;
 }
 .btn-authentication:hover {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #e0e0e0;
+  border-color: #141414;
 }
 .btn-authentication:active,
 .btn-authentication.active,
 .open > .dropdown-toggle.btn-authentication {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #e0e0e0;
+  border-color: #141414;
 }
 .btn-authentication:active:hover,
 .btn-authentication.active:hover,
@@ -8596,9 +8596,9 @@ fieldset[disabled] .btn-security.focus {
 .btn-authentication:active.focus,
 .btn-authentication.active.focus,
 .open > .dropdown-toggle.btn-authentication.focus {
-  color: #fff;
+  color: #333333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #bfbfbf;
+  border-color: #000000;
 }
 .btn-authentication:active,
 .btn-authentication.active,
@@ -8615,11 +8615,11 @@ fieldset[disabled] .btn-authentication:focus,
 .btn-authentication[disabled].focus,
 fieldset[disabled] .btn-authentication.focus {
   background-color: transparent;
-  border-color: #fff;
+  border-color: #333333;
 }
 .btn-authentication .badge {
   color: transparent;
-  background-color: #fff;
+  background-color: #333333;
 }
 .btn-authentication:hover {
   background-color: rgba(0, 0, 0, 0);
@@ -9549,23 +9549,12 @@ div.aspNetDisabled {
   color: #fff;
 }
 .headerImage .titleBlock p {
-  font-size: 23px;
-  font-size: 2.3rem;
-  font-weight: normal;
-  font-style: normal;
+  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
+  font-style: normal;
   margin-top: 35px;
-  border-top: solid white 2px;
-  padding-top: 35px;
   color: white;
-}
-@media (max-width: 768px) {
-  .headerImage .titleBlock p {
-    font-size: 16px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    font-style: normal;
-  }
 }
 .headerImage .titleBlock ul li a {
   display: block;
@@ -9598,6 +9587,21 @@ div.aspNetDisabled {
   height: inherit;
   position: relative;
   z-index: 10;
+}
+.page_subnav {
+  background: #555555;
+  font-size: 14.666px;
+  font-size: 1.4666000000000001rem;
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+}
+.page_subnav strong {
+  text-transform: uppercase;
+  padding: 10px;
+}
+.page_subnav ul li a {
+  color: #ffffff;
 }
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -10338,6 +10342,9 @@ header.opaque .navbar .menu-opener:hover {
     left: 0;
   }
 }
+#latest-sermon {
+  padding: 0;
+}
 @media (min-width: 768px) {
   #latest-sermon {
     min-height: 39vw;
@@ -10581,18 +10588,34 @@ header.opaque .navbar .menu-opener:hover {
     font-size: 55px;
   }
 }
+#accordion.panel-group .panel,
 .accordion.panel-group .panel {
   border: none;
   background: none;
+  box-shadow: none;
 }
+#accordion.panel-group .panel-heading,
 .accordion.panel-group .panel-heading {
   background: none;
   border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #555555;
 }
+#accordion.panel-group .panel-title,
+.accordion.panel-group .panel-title {
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+}
+#accordion.panel-group .panel-title a,
 .accordion.panel-group .panel-title a {
+  text-decoration: none;
   display: block;
   position: relative;
 }
+#accordion.panel-group .panel-title a:after,
 .accordion.panel-group .panel-title a:after {
   position: absolute;
   top: 50%;
@@ -10601,6 +10624,13 @@ header.opaque .navbar .menu-opener:hover {
   font-family: "Font Awesome 5";
   font-weight: 900;
   content: "\f067";
+}
+#accordion.panel-group .panel-body,
+.accordion.panel-group .panel-body {
+  border: none;
+}
+#churches-list .campus {
+  text-align: center;
 }
 .block-grid.events-grid > .block-grid-item,
 .block-grid.events-grid > li {
@@ -10681,61 +10711,96 @@ select.sermon-list {
 .series-list .series .series-image h2 {
   display: none;
 }
-.series-list .series-body {
+.series-list .series-container {
   display: none;
+}
+.series-list .series-sermons {
+  transform: translateY(-30px);
+}
+.series-list .series-sermons .series-container {
+  padding: 25px 0;
+}
+@media (min-width: 768px) {
+  .series-list .series-sermons .series-container {
+    padding-top: 40px;
+  }
+}
+@media (min-width: 1700px) {
+  .series-list .series-sermons .series-container {
+    padding-top: 65px;
+  }
+}
+.series-list .series-sermons .series-container .series-body {
   background-color: #555555;
   color: #ffffff;
-  padding: 20px 0;
-  margin: 25px 0;
   position: relative;
 }
-.series-list .series-body:before {
+.series-list .series-sermons .series-container .series-body .container {
+  position: relative;
+}
+.series-list .series-sermons .series-container .series-body .container:before {
   content: "";
   border: solid 20px transparent;
   border-bottom-color: #555555;
   position: absolute;
   top: 0;
-  left: 25%;
-  transform: translateY(-100%);
+  transform: translate(-50%, -100%);
+  left: 50%;
 }
 @media (min-width: 768px) {
-  .series-list .series-body {
-    margin-top: 40px;
-    padding: 41px 0;
+  .series-list .series-sermons .series-container .series-body .container:before {
+    left: 75%;
   }
-  .series-list .series-body:before {
+}
+@media (min-width: 768px) {
+  .series-list .series-sermons .series-container .series-body .container:before {
     border-width: 35px;
   }
 }
 @media (min-width: 1700px) {
-  .series-list .series-body {
-    margin-top: 65px;
-    padding: 62px 0;
-  }
-  .series-list .series-body:before {
+  .series-list .series-sermons .series-container .series-body .container:before {
     border-width: 55px;
   }
 }
-.series-list .series-body:last-child:before {
-  left: 75%;
+@media (min-width: 768px) {
+  .series-list .series-sermons .series-container:first-child .container:before {
+    left: 25%;
+  }
 }
-.series-list .series-body .sermons-list {
+.series-body {
+  background-color: #555555;
+  color: #ffffff;
+}
+.series-body .container {
+  padding: 20px 0;
+}
+@media (min-width: 768px) {
+  .series-body .container {
+    padding: 41px 0;
+  }
+}
+@media (min-width: 1700px) {
+  .series-body .container {
+    padding: 62px 0;
+  }
+}
+.series-body .sermons-list {
   margin-top: 25px;
 }
 @media (min-width: 768px) {
-  .series-list .series-body .sermons-list {
+  .series-body .sermons-list {
     margin-top: 50px;
   }
 }
 @media (min-width: 1700px) {
-  .series-list .series-body .sermons-list {
+  .series-body .sermons-list {
     margin-top: 75px;
   }
 }
-.series-list .series-body .sermons-list:first-child {
+.series-body .sermons-list:first-child {
   margin-top: 0;
 }
-.series-list .series-body .sermons-list .series-dates {
+.series-body .sermons-list .series-dates {
   color: #ffffff;
   font-size: 20px;
   font-size: 2rem;
@@ -10743,16 +10808,16 @@ select.sermon-list {
   font-style: normal;
   margin: 0;
 }
-.series-list .series-body .sermons-list li.block-grid-item {
+.series-body .sermons-list li.block-grid-item {
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: normal;
   font-style: normal;
 }
-.series-list .series-body .sermons-list li.block-grid-item a {
+.series-body .sermons-list li.block-grid-item a {
   color: #ffffff;
 }
-.series-list .series-body .sermons-list h3 {
+.series-body .sermons-list h3 {
   color: #ffffff;
   margin: 0;
   text-transform: uppercase;
@@ -10760,6 +10825,61 @@ select.sermon-list {
   font-size: 4.266rem;
   font-weight: bold;
   font-style: normal;
+}
+.staffGrid .staffMember .staffPhoto .photo {
+  border-radius: 100%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .staffGrid .staffMember .staffPhoto .photo {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .staffGrid .staffMember .staffPhoto .photo {
+    margin-bottom: 30px;
+  }
+}
+.staffGrid .staffMember .staffPhoto .photo img {
+  max-width: 100%;
+}
+.staffGrid .staffMember .staffPhoto .photo .bioButton {
+  display: block;
+}
+.staffGrid .staffMember .staffPhoto .photo .bioButton:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(85, 85, 85, 0.5);
+  z-index: 5;
+}
+.staffGrid .staffMember .staffPhoto .photo .bioButton:hover:after {
+  color: #ffffff;
+  content: "+";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+  z-index: 10;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: normal;
+  font-style: normal;
+}
+.staffGrid .staffMember .nameTitle {
+  text-align: center;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: normal;
+  font-style: normal;
+}
+.staffGrid .staffMember .nameTitle p {
+  margin: 0;
 }
 #subfooter {
   background-color: #AFAFAF;
@@ -10816,7 +10936,7 @@ select.sermon-list {
   }
 }
 #subfooter .contact-info p {
-  margin: 0;
+  margin: 15px 0;
 }
 #subfooter .login {
   text-transform: uppercase;
@@ -10832,7 +10952,7 @@ select.sermon-list {
 }
 #subfooter .login .navbar-nav a {
   background: none;
-  padding: 0;
+  padding: 15px;
   font-weight: bold;
 }
 footer {
@@ -10995,6 +11115,63 @@ footer .poweredbyfishhook {
   .container {
     width: 1640px;
   }
+}
+.btn-white {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+}
+.btn-white:focus,
+.btn-white.focus {
+  color: #ffffff;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-white:hover {
+  color: #ffffff;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-white:active,
+.btn-white.active,
+.open > .dropdown-toggle.btn-white {
+  color: #ffffff;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-white:active:hover,
+.btn-white.active:hover,
+.open > .dropdown-toggle.btn-white:hover,
+.btn-white:active:focus,
+.btn-white.active:focus,
+.open > .dropdown-toggle.btn-white:focus,
+.btn-white:active.focus,
+.btn-white.active.focus,
+.open > .dropdown-toggle.btn-white.focus {
+  color: #ffffff;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-white:active,
+.btn-white.active,
+.open > .dropdown-toggle.btn-white {
+  background-image: none;
+}
+.btn-white.disabled:hover,
+.btn-white[disabled]:hover,
+fieldset[disabled] .btn-white:hover,
+.btn-white.disabled:focus,
+.btn-white[disabled]:focus,
+fieldset[disabled] .btn-white:focus,
+.btn-white.disabled.focus,
+.btn-white[disabled].focus,
+fieldset[disabled] .btn-white.focus {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+.btn-white .badge {
+  color: transparent;
+  background-color: #ffffff;
 }
 html {
   text-rendering: optimizeLegibility;

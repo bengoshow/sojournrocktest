@@ -2,41 +2,9 @@
 	{% for item in Items %}
 	{% assign ctr = forloop.index0 | Modulo:2 %}
 	{% assign seriesImageGuid = item | Attribute:'SeriesImage','RawValue' %}
-	{% if ctr =="0" %}
+	{% if ctr == 0 %}
 	<div class="container">
 		<div class="row">
-		{% capture sermonslist %}
-			<div class="series-body" id="{{ item.Title | ToCssClass }}">
-				<div class="container">
-			{% for week in item.ChildItems %}
-					<div class="sermons-list">
-					<div class="row">
-						<div class="col-sm-6 col-md-4">
-							<p class="series-dates">
-								{{ week.ChildContentChannelItem.StartDateTime | Date:'M/d/yyyy' }} 
-								{% if week.ChildContentChannelItem.ExpireDateTime and week.ChildContentChannelItem.ExpireDateTime != "" %}
-									{% if week.ChildContentChannelItem.StartDateTime != week.ChildContentChannelItem.ExpireDateTime %}
-										- {{ week.ChildContentChannelItem.ExpireDateTime | Date:'M/d/yyyy' }}
-									{% endif %}
-								{% endif %}
-							</p>
-							<h3>{{ week.ChildContentChannelItem.Title }}</h3>
-						</div>
-						<div class="col-sm-6 col-md-8">
-							<ul class="block-grid-sm-2">
-							{% contentchannelitem id:'{{week.ChildContentChannelItemId}}' %}
-								{% for sermon in contentchannelitem.ChildItems %}
-									<li class="block-grid-item"><a class="sermon-link" href="{{ LinkedPages.DetailPage }}?Item={{ sermon.ChildContentChannelItem.Id }}"><strong>{{ sermon.ChildContentChannelItem.Title }}:</strong> {{ sermon.ChildContentChannelItem | Attribute:'Speaker' }}</a></li>
-								{% endfor %}
-							{% endcontentchannelitem %}
-							</ul>
-						</div>
-					</div>
-					</div>
-			{% endfor %}
-				</div>			
-			</div>
-		{% endcapture %}
 	{% endif %}
 		<div class="col-sm-6 margin-b-lg">
 			<article class="series">
@@ -47,43 +15,44 @@
 				{% endif %}			
 			</article>
 		</div>
-	{% if ctr =="1" %}
-		</div>
-	</div>
-	<div>
-		{{ sermonslist }}
-			<div class="series-body" id="{{ item.Title | ToCssClass }}">
+		<div class="series-container" id="{{ item.Title | ToCssClass }}">
+			<div class="series-body">
 				<div class="container">
 			{% for week in item.ChildItems %}
 					<div class="sermons-list">
-					<div class="row">
-						<div class="col-sm-6 col-md-4">
-							<p class="series-dates">
-								{{ week.ChildContentChannelItem.StartDateTime | Date:'M/d/yyyy' }} 
-								{% if week.ChildContentChannelItem.ExpireDateTime and week.ChildContentChannelItem.ExpireDateTime != "" %}
-									{% if week.ChildContentChannelItem.StartDateTime != week.ChildContentChannelItem.ExpireDateTime %}
-										- {{ week.ChildContentChannelItem.ExpireDateTime | Date:'M/d/yyyy' }}
+						<div class="row">
+							<div class="col-sm-6 col-md-4">
+								<p class="series-dates">
+									{{ week.ChildContentChannelItem.StartDateTime | Date:'M/d/yyyy' }} 
+									{% if week.ChildContentChannelItem.ExpireDateTime and week.ChildContentChannelItem.ExpireDateTime != "" %}
+										{% if week.ChildContentChannelItem.StartDateTime != week.ChildContentChannelItem.ExpireDateTime %}
+											- {{ week.ChildContentChannelItem.ExpireDateTime | Date:'M/d/yyyy' }}
+										{% endif %}
 									{% endif %}
-								{% endif %}
-							</p>
-							<h3>{{ week.ChildContentChannelItem.Title }}</h3>
+								</p>
+								<h3>{{ week.ChildContentChannelItem.Title }}</h3>
+							</div>
+							<div class="col-sm-6 col-md-8">
+								<ul class="block-grid-sm-2">
+								{% contentchannelitem id:'{{week.ChildContentChannelItemId}}' %}
+									{% for sermon in contentchannelitem.ChildItems %}
+										<li class="block-grid-item"><a class="sermon-link" href="{{ LinkedPages.DetailPage }}?Item={{ sermon.ChildContentChannelItem.Id }}"><strong>{{ sermon.ChildContentChannelItem.Title }}:</strong> {{ sermon.ChildContentChannelItem | Attribute:'Speaker' }}</a></li>
+									{% endfor %}
+								{% endcontentchannelitem %}
+								</ul>
+							</div>
 						</div>
-						<div class="col-sm-6 col-md-8">
-							<ul class="block-grid-sm-2">
-							{% contentchannelitem id:'{{week.ChildContentChannelItemId}}' %}
-								{% for sermon in contentchannelitem.ChildItems %}
-									<li class="block-grid-item"><a class="sermon-link" href="{{ LinkedPages.DetailPage }}?Item={{ sermon.ChildContentChannelItem.Id }}"><strong>{{ sermon.ChildContentChannelItem.Title }}:</strong> {{ sermon.ChildContentChannelItem | Attribute:'Speaker' }}</a></li>
-								{% endfor %}
-							{% endcontentchannelitem %}
-							</ul>
-						</div>
-					</div>
 					</div>
 			{% endfor %}
 				</div>			
 			</div>
 		</div>
+	{% if ctr == 1 %}
+		</div>
+	</div>
 	{% endif %}
-
+	{% if ctr == 1 or forloop.last == true %}
+	<div class="series-sermons"></div>
+	{% endif %}
 	{% endfor -%}
 </div>

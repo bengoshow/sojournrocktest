@@ -1,0 +1,45 @@
+{% if PageParameter['groupId'] %}
+	{% assign groupid = PageParameter['groupId'] %}
+{% else %}
+	{% assign groupid = 69461 %}
+{% endif %}
+
+SELECT 
+	[Name],[Id] 
+FROM 
+	[Group]
+WHERE 
+	[ParentGroupId] = 69461
+	or [Id] = 69461
+
+SELECT
+    p.[NickName]
+    ,p.[FirstName]
+    ,p.[LastName]
+    ,p.[Id]
+    ,p.[Email]
+    ,p.[PhotoId]
+    ,b.[Guid] "bgImg"
+    ,g.[Name] "Department"
+		,avbio.[Value] "Bio"
+		,avma.[Value]
+		,dv.[Value] "MinistryArea"
+		,avtitle.[Value] "StaffTitle"
+		,avsp.[Value] "StaffPhone"
+		
+FROM
+    [Group] g
+    LEFT JOIN [GroupMember] gm ON gm.[GroupId] = g.[Id]
+    LEFT JOIN [Person] p on gm.[PersonId] = p.[Id]
+    LEFT JOIN [BinaryFile] b on b.[id] = p.[PhotoId]
+		LEFT JOIN [AttributeValue] avbio ON avbio.[EntityId] = p.[Id] AND avbio.[AttributeId] = 7468
+		LEFT JOIN [AttributeValue] avtitle ON avtitle.[EntityId] = p.[Id] AND avtitle.[AttributeId] = 7220
+		LEFT JOIN [AttributeValue] avsp ON avsp.[EntityId] = p.[Id] AND avsp.[AttributeId] = 7474
+		LEFT JOIN [AttributeValue] avma ON avma.[EntityId] = p.[Id] AND avma.[AttributeId] = 7221
+		LEFT JOIN [DefinedValue] dv ON avma.[Value] = CONVERT(nvarchar(50), dv.[Guid])
+WHERE
+    g.[Id] = {{ groupid }}
+    and p.[Id] IS NOT NULL
+ORDER BY
+    p.[LastName]
+    ,p.[NickName];

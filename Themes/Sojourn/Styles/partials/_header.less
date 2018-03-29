@@ -21,15 +21,9 @@
 			color: #fff;
 		}
 		p {
-			.font(23);
-			font-weight: bold;
+			.font(20, bold);
 			margin-top: 35px;
-			border-top: solid white 2px;
-			padding-top: 35px;
 			color: white;
-			@media (max-width: @screen-sm-min) {
-				.font(16);
-			}		
 		}
 		ul {
 			li {
@@ -65,5 +59,21 @@
 		height: inherit;
 		position: relative;
 		z-index: 10;
+	}
+}
+.page_subnav {
+	background: @gray;
+	.font(14.666);
+	color: @white;
+	strong {
+		text-transform: uppercase;		
+		padding: 10px;
+	}
+	ul {
+		li {
+			a {
+				color: @white;
+			}			
+		}
 	}
 }

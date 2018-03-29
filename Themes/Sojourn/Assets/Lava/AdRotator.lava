@@ -7,10 +7,10 @@
       {% else -%}
       <div class="item">
         {% endif -%}
-        {{ item | Attribute:'Image' }}
+        {{ item | Attribute:'ContentImageSectionImage' }}
         <div class="carousel-caption">
 			    <h1>{{ item.Title }}</h1>
-			    <p></p>
+			    {{ item.Content }}
 			  </div>
       </div>
       {% endfor %}

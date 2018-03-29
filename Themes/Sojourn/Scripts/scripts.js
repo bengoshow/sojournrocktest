@@ -42,7 +42,9 @@ jQuery(function($){
 	var didScroll = true;
 	var lastScrollTop = 0;
 	var delta = 5;
-	var navbarHeight = $('header').outerHeight();
+	var navbarHeight = $('header nav').outerHeight();
+	var headerImageHeight = $('.headerImage').outerHeight();
+	var pageSubnavHeight = $('.page_subnav').outerHeight();
 	
 	$(window).scroll(function(){
 	    didScroll = true;
@@ -57,17 +59,25 @@ jQuery(function($){
 	
 	function hasScrolled() {
 	    var st = $(this).scrollTop();
-	    
+	    //console.log(st);
 	    // Make sure they scroll more than delta
 	    if(Math.abs(lastScrollTop - st) <= delta)
 	        return;
 	    
 	    // If they scrolled down and are past the navbar, add class .nav-up.
 	    // This is necessary so you never see what is "behind" the navbar.
-	    if (st > navbarHeight){
+	    if (st > 10){
 	        $('header').addClass('opaque');
 	    } else {
 	        $('header').removeClass('opaque');
+	    }
+
+	    if (st >= (headerImageHeight - navbarHeight)){
+	        $('.page_subnav').addClass('navbar-fixed-top').css('top',navbarHeight+'px');
+	        $('.headerImage').css('margin-bottom',pageSubnavHeight+'px');
+	    } else {
+	        $('.page_subnav').removeClass('navbar-fixed-top').css('top','auto');
+	        $('.headerImage').css('margin-bottom',0);
 	    }
 	    
 	    lastScrollTop = st;
@@ -77,7 +87,7 @@ jQuery(function($){
 			$('#churches-mega-menu').hide().removeClass('open');	
 		}
 	});
-	$('#menu_churches a').on('click', function(e){
+	$('#menu_churches a, #menu_church a').on('click', function(e){
 		e.preventDefault();
 		if ($(this).parent().hasClass('open')) {
 			$('#churches-mega-menu').hide().removeClass('open');	
@@ -98,16 +108,29 @@ jQuery(function($){
 		  $(this).find('.select-overlay').css('visibility','visible');
 		});
   });
-	$('select.sermon-list').on('change', function(){
+	$('select.sermon-list, select.select-church').on('change', function(){
 		var url = $(this).val(); // get selected value
 		if (url) { // require a URL
 		    window.location = url; // redirect
 		}
 		return false;
 	});
+	var windowWidth = $(window).width();
+	if (windowWidth >= 768) {
+		$('.series-list .series-container').each(function(){
+			var parentContainer = $(this).closest('.container').next();
+			$(this).appendTo(parentContainer);
+		});
+	}
 	$('.series-opener').on('click touchstart', function(e){
 		e.preventDefault();
+		$('.series-container').hide();
 		var seriesblock = $(this).data('openseries');
-		$("#"+seriesblock).slideDown();
+		if ($("#"+seriesblock).hasClass('open')) {
+			$('.series-container').removeClass('open');		
+		} else {
+			$('.series-container').removeClass('open');		
+			$("#"+seriesblock).addClass('open').slideDown();			
+		}
 	});
 });

@@ -22,69 +22,100 @@ select.sermon-list {
 			}
 		}
 	}
-	.series-body {
+	.series-container {
 		display: none;
-		background-color: @gray;
-		color: @white;
-		padding: 20px 0;
-		margin: 25px 0;
-		position: relative;
-		&:before {
-			content:"";
-			border: solid 20px transparent;
-			border-bottom-color: @gray;
-			position: absolute;
-			top:0;
-			left: 25%;
-			transform: translateY(-100%); 
-		}
-		@media (min-width: @screen-sm-min) {
-			margin-top: 40px;
-			padding: 41px 0;
-			&:before {
-				border-width: 35px;
-			}
-		}
-		@media (min-width: @screen-xl-min) {
-			margin-top: 65px;
-			padding: 62px 0;
-			&:before {
-				border-width: 55px;
-			}
-		}
-		&:last-child{
-			&:before {
-				left: 75%;
-			}
-		}
-		.sermons-list {
-			margin-top: 25px;
+	}
+	.series-sermons {
+		transform:translateY(-30px);
+		.series-container {
+			padding: 25px 0;
 			@media (min-width: @screen-sm-min) {
-				margin-top: 50px;
+				padding-top: 40px;
 			}
 			@media (min-width: @screen-xl-min) {
-				margin-top: 75px;
+				padding-top: 65px;
 			}
-			&:first-child {
-				margin-top:0;
-			}
-			.series-dates {
+			.series-body {
+				background-color: @gray;
 				color: @white;
-				.font(20, bold);
-				margin:0;
-			}
-			li.block-grid-item {
-				.font(18);
-				a {
-					color: @white
+				position: relative;
+				.container {
+					position: relative;
+					&:before {
+						content:"";
+						border: solid 20px transparent;
+						border-bottom-color: @gray;
+						position: absolute;
+						top:0;
+						transform: translate(-50%,-100%); 
+						left: 50%;
+						@media (min-width: @screen-sm-min) {
+							left: 75%;
+						}
+					}
+					@media (min-width: @screen-sm-min) {
+						&:before {
+							border-width: 35px;
+						}
+					}
+					@media (min-width: @screen-xl-min) {
+						&:before {
+							border-width: 55px;
+						}
+					}
 				}
 			}
-			h3 {
-				color: @white;
-				margin:0;
-				text-transform: uppercase;
-				.font(42.66, bold);
+			&:first-child {
+				.container {
+					&:before {
+						@media (min-width: @screen-sm-min) {
+							left: 25%;
+						}
+					}
+				}
 			}
+		}
+	}
+}
+.series-body {
+	background-color: @gray;
+	color: @white;
+	.container {
+		padding: 20px 0;
+		@media (min-width: @screen-sm-min) {
+			padding: 41px 0;
+		}
+		@media (min-width: @screen-xl-min) {
+			padding: 62px 0;
+		}
+	}
+	.sermons-list {
+		margin-top: 25px;
+		@media (min-width: @screen-sm-min) {
+			margin-top: 50px;
+		}
+		@media (min-width: @screen-xl-min) {
+			margin-top: 75px;
+		}
+		&:first-child {
+			margin-top:0;
+		}
+		.series-dates {
+			color: @white;
+			.font(20, bold);
+			margin:0;
+		}
+		li.block-grid-item {
+			.font(18);
+			a {
+				color: @white
+			}
+		}
+		h3 {
+			color: @white;
+			margin:0;
+			text-transform: uppercase;
+			.font(42.66, bold);
 		}
 	}
 }
