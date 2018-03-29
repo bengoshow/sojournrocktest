@@ -10,7 +10,7 @@
       {% for cg in groupItems %}
 				[[ item title:'{{ cg.Name }}' ]]
         <div class="staffGrid">
-					{% groupmember where:'GroupId == {{ cg.Id }}' sort:'Role,Person.LastName,Person.NickName desc'%}
+					{% groupmember where:'GroupId == {{ cg.Id }}' sort:'GroupRole,Person.LastName,Person.NickName desc'%}
 					      <div class="block-grid-xs-1 block-grid-sm-3 block-grid-md-5">
 					       {% for member in groupmemberItems %}
 					         	{% assign gm = member.Person %}
